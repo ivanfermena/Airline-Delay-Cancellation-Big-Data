@@ -32,9 +32,9 @@ print("Numero de lineas extraidas en el dataset:")
 print(num_rows)
 
 print("Numero de NA y null que tienen cada columna:")
-print (df.isna().sum())
+print(df.isna().sum())
 
-print("Exemplos de estos valores que no nos interesan:")
+print("Ejemplos de estos valores que no nos interesan:")
 print(df[df['DEP_DELAY'].isna()])
 
 #missing_values = ["n/a", "na", "", " "]from pyspark.sql.functions import col
@@ -45,7 +45,7 @@ df_cleaned = df[df['DEP_DELAY'].notna()]
 print("Revisamos el numero de NA y null que tienen cada columna:")
 print(df_cleaned.isna().sum())
 
-df_airports = spark.createDataFrame(df_cleaned[['ORIGIN','DEST','DEP_DELAY']])
+df_airports = spark.createDataFrame(df_cleaned[['ORIGIN', 'DEST', 'DEP_DELAY']])
 
 # Comprobamos los tipos de las columnas para no tener error de typos en el sum
 print(df_airports.dtypes)
