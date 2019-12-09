@@ -24,31 +24,31 @@ spark = SparkSession.builder.appName("Aircraft-Delay-Cancelation").getOrCreate()
 # df = pd.read_csv("../data/*.csv")
 df = pd.read_csv("2018-example.csv")
 
-##print(df.info())
+print(df.info())
 
-##num_rows = df.count()
+num_rows = df.count()
 
-##print("Numero de lineas extraidas en el dataset:")
-##print(num_rows)
+print("Numero de lineas extraidas en el dataset:")
+print(num_rows)
 
-##print("Numero de NA y null que tienen cada columna:")
-##print(df.isna().sum())
+print("Numero de NA y null que tienen cada columna:")
+print(df.isna().sum())
 
-##print("Ejemplos de estos valores que no nos interesan:")
-##print(df[df['DEP_DELAY'].isna()])
+print("Ejemplos de estos valores que no nos interesan:")
+print(df[df['DEP_DELAY'].isna()])
 
-#missing_values = ["n/a", "na", "", " "]from pyspark.sql.functions import col
-#df_cleaned = pd.read_csv("../data/2018.csv", na_values = missing_values)
+missing_values = ["n/a", "na", "", " "]from pyspark.sql.functions import col
+df_cleaned = pd.read_csv("../data/2018.csv", na_values = missing_values)
 
 df_cleaned = df[df['DEP_DELAY'].notna()]
 
-##print("Revisamos el numero de NA y null que tienen cada columna:")
-##print(df_cleaned.isna().sum())
+print("Revisamos el numero de NA y null que tienen cada columna:")
+print(df_cleaned.isna().sum())
 
 df_airports = spark.createDataFrame(df_cleaned[['ORIGIN', 'DEST', 'DEP_DELAY']])
 
 # Comprobamos los tipos de las columnas para no tener error de typos en el sum
-##print(df_airports.dtypes)
+print(df_airports.dtypes)
 
 # --------- DATA TRANSFORMATION ---------
 
