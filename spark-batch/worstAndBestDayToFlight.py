@@ -19,23 +19,42 @@ df = sqlContext.read.load("2009-2018.csv",
 df.registerTempTable("df")
 
 dfD = sqlContext.sql("""
-    SELECT DAYOFYEAR(FL_DATE) as Day, COUNT(ARR_DELAY) as Delays
+    SELECT MONTH(FL_DATE) as Month, DAY(FL_DATE) as Day, COUNT(ARR_DELAY) as Delays
     FROM df
     WHERE ARR_DELAY > 0.0
-    GROUP BY DAYOFYEAR(FL_DATE)
-    ORDER BY DAYOFYEAR(FL_DATE) DESC
+    GROUP BY MONTH(FL_DATE), DAY(FL_DATE)
+    ORDER BY Month, Day DESC
 """)
 
 dfC = sqlContext.sql("""
-    SELECT DAYOFYEAR(FL_DATE) as Day, COUNT(CANCELLED) as Cancelations
+    SELECT Month(FL_DATE) as Month, DAY(FL_DATE) as Day, COUNT(CANCELLED) as Cancelations
     FROM df
     WHERE CANCELLED = 1.0
-    GROUP BY DAYOFYEAR(FL_DATE)
-    ORDER BY DAYOFYEAR(FL_DATE) DESC
+    GROUP BY MONTH(FL_DATE), DAY(FL_DATE)
+    ORDER BY Month, Day DESC
 """)
 
-partial1 = dfD.join(dfC,['Day'],"outer")
+partial1 = dfD.join(dfC,['Month', 'Day'],"outer")
 
-results = partial1.rdd.map(lambda x: (x[0], x[1], x[2], x[1] + x[2]))
-results.toDF(["Day", "Delays", "Cancellations", "Total incidents"]).show()
-#results.toDF(["Day", "Delays", "Cancellations", "Total incidents"]).repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("worstAndBestDayToFlight")
+partial2 = partial1.rdd.map(lambda x: (x[0], x[1], x[2], x[3], x[2] + x[3]))
+partial3 = partial2.map(lambda x: (x[0], x[1], x[4]))
+
+
+partial3.toDF(["MONTH", "DAY", "INCIDENTS"]).registerTempTable("df2")
+
+min =  sqlContext.sql("""
+    SELECT MONTH as Month, DAY as Day, INCIDENTS as Incidents
+    FROM df2
+    WHERE INCIDENTS = (SELECT MIN(INCIDENTS) FROM df2) AND MONTH <> 2 AND DAY <> 29
+""")
+
+max = sqlContext.sql("""
+    SELECT MONTH as Month, DAY as Day, INCIDENTS as Incidents
+    FROM df2
+    WHERE INCIDENTS = (SELECT MAX(INCIDENTS) FROM df2) AND MONTH <> 2 AND DAY <> 29
+""")
+
+results = min.join(max,['Month', 'Day'],"outer")
+results.show()
+#results.toDF(["Month", "Day", "Total incidents"]).repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("worstAndBestDayToFlight")
+
