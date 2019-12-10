@@ -24,4 +24,5 @@ results = sqlContext.sql("""
     ORDER BY Month DESC
 """)
 
-results.repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("delayPerMonth")
+results.show()
+#results.repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("delayPerMonth")

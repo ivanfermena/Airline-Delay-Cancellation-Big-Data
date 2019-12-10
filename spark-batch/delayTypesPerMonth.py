@@ -55,7 +55,9 @@ partial2 = partial1.join(dfN,['Year', 'Month'],"outer")
 partial3 = partial2.join(dfS,['Year', 'Month'],"outer")
 
 
+
+
 semi_results = partial3.rdd.map(lambda x: (x[0], x[1], x[2], x[3], x[4], x[5], x[2] + x[3] + x[4] + x[5]))
 results = semi_results.map(lambda x: (x[0], x[1], "{:12.2f}".format((x[2]/x[6]) * 100),"{:12.2f}".format((x[3]/x[6]) * 100), "{:12.2f}".format((x[4]/x[6]) * 100), "{:12.2f}".format((x[5]/x[6]) * 100)))
-
-results.toDF(["Year", "Month", "Airline_Delay", "Weather_delay", "Air_system_delay", "Security_delay"]).repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("delayTypePerMonth")
+results.toDF(["Year", "Month", "Airline_Delay", "Weather_delay", "Air_system_delay", "Security_delay"]).show()
+#results.toDF(["Year", "Month", "Airline_Delay", "Weather_delay", "Air_system_delay", "Security_delay"]).repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("delayTypePerMonth")

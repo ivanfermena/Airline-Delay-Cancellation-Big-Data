@@ -23,5 +23,5 @@ results = sqlContext.sql("""
     GROUP BY OP_CARRIER
     ORDER BY Airline ASC
 """)
-
-results.repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("delayPerAirline.csv")
+results.show()
+#results.repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("delayPerAirline.csv")

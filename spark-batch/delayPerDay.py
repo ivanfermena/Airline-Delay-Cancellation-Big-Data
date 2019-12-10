@@ -24,4 +24,5 @@ results = sqlContext.sql("""
     ORDER BY date ASC
 """)
 
-results.repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("delayPerDay")
+results.show()
+#results.repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("delayPerDay")

@@ -23,5 +23,6 @@ results = sqlContext.sql("""
     ORDER BY distance DESC
 """)
 
-results.repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("delayDistance")
+results.show()
+#results.repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("delayDistance")
 

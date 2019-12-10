@@ -37,4 +37,5 @@ dfC = sqlContext.sql("""
 partial1 = dfD.join(dfC,['Month'],"outer")
 
 results = partial1.rdd.map(lambda x: (x[0], x[1], x[2], x[1] + x[2]))
-results.toDF(["Month", "Delays", "Cancellations", "Total incidents"]).repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("worstAndBestMonthToFlight")
+results.toDF(["Month", "Delays", "Cancellations", "Total incidents"]).show()
+#results.toDF(["Month", "Delays", "Cancellations", "Total incidents"]).repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("worstAndBestMonthToFlight")

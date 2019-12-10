@@ -25,4 +25,5 @@ results = sqlContext.sql("""
     ORDER BY Airline ASC
 """)
 
-results.repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("cancelledPerAirline.csv")
+results.show()
+#results.repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("cancelledPerAirline.csv")

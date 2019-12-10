@@ -24,5 +24,5 @@ results = sqlContext.sql("""
     GROUP BY ORIGIN
     ORDER BY Origin ASC
 """)
-
-results.repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("cancelledPerCity.csv")
+results.show()
+#results.repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("cancelledPerCity.csv")

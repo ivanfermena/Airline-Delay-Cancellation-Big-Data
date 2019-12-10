@@ -23,5 +23,5 @@ results = sqlContext.sql("""
     GROUP BY FL_DATE
     ORDER BY date ASC
 """)
-
-results.repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("cancelledPerDay")
+results.show()
+#results.repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("cancelledPerDay")
