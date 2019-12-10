@@ -37,7 +37,7 @@ Partiendo del dataframe inicial se ejecuta varias consultas que relacionan los t
     +-----+-------------+-------------+----------------+--------------+
     |Month|Airline_Delay|Weather_delay|Air_system_delay|Security_delay|
     +-----+-------------+-------------+----------------+--------------+
-    |   12|        31.54|         3.51|           32.67|         32.27|
+    |   12|        31.54|         3.51|           32.67|         32.27| <-- Percentages
     |    1|        30.23|         4.31|           34.68|         30.78|
     |    6|        30.58|         3.82|           32.46|         33.13|
     |    3|        30.77|         2.90|           34.36|         31.97|

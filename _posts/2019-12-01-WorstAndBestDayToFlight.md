@@ -37,6 +37,3 @@ Partiendo del dataframe inicial se ejecutan varias consultas y se mezclan entre 
     |    30175|    7|  4| <-- Best day
     |    92478|    6| 23| <-- Worst day
     +---------+-----+---+
-
-
-
