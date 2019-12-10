@@ -37,8 +37,8 @@ print(df.isna().sum())
 print("Ejemplos de estos valores que no nos interesan:")
 print(df[df['DEP_DELAY'].isna()])
 
-missing_values = ["n/a", "na", "", " "]from pyspark.sql.functions import col
-df_cleaned = pd.read_csv("../data/2018.csv", na_values = missing_values)
+missing_values = ["n/a", "na", "", " "]
+df_cleaned = pd.read_csv("2018-example.csv", na_values = missing_values)
 
 df_cleaned = df[df['DEP_DELAY'].notna()]
 
