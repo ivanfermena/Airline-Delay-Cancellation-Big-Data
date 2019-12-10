@@ -11,7 +11,6 @@ Proyecto de la asignatura llama "Cloud y Big Data" de la Facultad de Informátic
 git satu
 En particular en este proyecto se ha obtenido un dataset de vuelos nacionales de EEUU en la que aparece diferente información relativa a los retrasos y cancelaciones de estos vuelos. Se ha realizado un analisis estadistico de los datos con la finalidad de obtener patrones y comportamientos sobre estos retrasos y cancelaciones. La intención es que posteriormente se de una base solidad de analisis mas profundo para la obtencion de valor o toma de decisiones sobre el caso de uso.
 
-
 ## ¿Por qué usar procesamiento paralelo a gran escala?
 
 Debido a la propia naturaleza de los datos y al problema que queremos resolver, obtendremos nuestra información de más de 30 Aeropuertos de Estados Unidos, los cuales tienen una media anual de entre 100.000 y 700.000 transacciones aéreas, lo que produce un alto volumen de información sobre los retrasos, cancelaciones e incidencias.
@@ -30,6 +29,7 @@ Para la realización de la práctica hemos usado como herramienta Apache Spark, 
 Como infraestructura usaremos el procesamiento cloud de aws, ya que no contamos con infraestructura suficiente para hacer un cluster "On-Premises". Se tiene pensado el uso de las máquinas locales y código subido a github para realizar el desarrollo, debido a una mayor raidez de desarrollo en un ambiente en local y posteriormente desplegarlo en un cluster en aws. 
 
 Usaremos como opción dada en aws el paquete de 4 vCPUs (m4.xlarge) de EMR, de este modo sabemos que tendremos el procesamiento necesario para la realización de estadísticas y gráficas que necesitamos. Así como el procesamiento en tiempo real.
+
 
 
 <a class="github-button" href="https://github.com/sharu725/ashwath" data-style="mega" data-count-href="/sharu725/ashwath/stargazers" data-count-api="/repos/sharu725/ashwath#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star sharu725/ashwath on GitHub">Star</a>
