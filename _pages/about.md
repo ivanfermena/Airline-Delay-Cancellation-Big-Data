@@ -8,7 +8,7 @@ show-in-menu: yes
 ## Descripción de proyecto
 
 Proyecto de la asignatura llama "Cloud y Big Data" de la Facultad de Informática de la Universidad Complutense de Madrid en la que se pretende representar todos los conocimientos obtenidos a los largo de la asignatura. Se nos dan las bases para conocer y desarrollar en entornos cloud y big data, entendiendo cual es su pontencial y en que ocasiones hay que usar dichas tecnologias.
-
+git satu
 En particular en este proyecto se ha obtenido un dataset de vuelos nacionales de EEUU en la que aparece diferente información relativa a los retrasos y cancelaciones de estos vuelos. Se ha realizado un analisis estadistico de los datos con la finalidad de obtener patrones y comportamientos sobre estos retrasos y cancelaciones. La intención es que posteriormente se de una base solidad de analisis mas profundo para la obtencion de valor o toma de decisiones sobre el caso de uso.
 
 
