@@ -22,13 +22,13 @@ Para ello hemos extraido una parte de los datos y hemos creado un socket que env
 
 Para ejecutar este ejemplo es necesario ejecutar primero el server y esperar a que se quede en espera un par de segundo.
 
-{% highlight %}
+{% highlight python %}
 spark-submit serverSparkStreaming.py
 {% endhighlight %}
 
 Tras la espera de esos segundos y cuando el terminal no muestra mas mensajes, se pued elanzar el cliente:
 
-{% highlight %}
+{% highlight python %}
 spark-submit clientSparkStreaming.py
 {% endhighlight %}
 
@@ -40,7 +40,7 @@ A continucacion mostraremos los dos archivos de pyhon que hemos usado para el pr
 
 **Code:** El codigo del socket del cliente se muestra enteró ya que es claro y sencillo. Abriendo una conexion especifica en local y enviando con ".send" cada una de las lineas leidas cada 3 segundos.
 
-{% highlight js %}
+{% highlight python %}
 
 import socket
 import time
@@ -97,7 +97,7 @@ names_col = ["FL_DATE","OP_CARRIER","OP_CARRIER_FL_NUM","ORIGIN","DEST","CRS_DEP
 
 A continuación tenemos la función que realizar el procesamiento de cada una de la lineas y actualiza el dataframe que contiene el top 10 de vuelos que tienen mas retraso. Se explicará con comentarios en el codigo cada una de las lineas pero en cojunto se lee la linea extraida de argumento, comprueba si es el mismo dia de procesamiento y si no vacia el dataframe acumulador, tras esto realizar las agrupaciones determinadas por ORIGEN, DESTINO y DEP_DELAY. Finalmente se ordenan por ese "DEP_DELAY" y devuelve dicho dataframe. 
 
-{% highlight html %}
+{% highlight python %}
 
 def proccessSpark(sc, ssc, spark, line, df_top, today_date):
 
@@ -135,7 +135,7 @@ def proccessSpark(sc, ssc, spark, line, df_top, today_date):
 
 El siguiente codigo solo genera la estructura necesaria para que se pueda realizra el procesamiento correctamente, especificado mas arriba. Entre ellos se inicia el dataframe que se va a usar a lo largo de la aplicacion y el socket necesario para obtener los datos del cliente.
 
-{% highlight html %}
+{% highlight python %}
 
 def Main():
     host = "localhost"
