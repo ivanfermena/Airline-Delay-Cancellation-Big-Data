@@ -1,13 +1,15 @@
 ---
 layout: page
-permalink: /life/
-title: Life Experiences
+permalink: /streaming/
+title: Streaming!
 ---
 
- <div class="post-list">
-    {% for post in site.categories.life %}
+  <div class="post-list">
+    {% for post in site.categories.streaming %}
      <a href="{{ post.url | prepend: site.baseurl }}">
         {% include post-cards.html %}
       </a>
     {% endfor %}
   </div>
+
+
