@@ -54,7 +54,7 @@ max = sqlContext.sql("""
     WHERE INCIDENTS = (SELECT MAX(INCIDENTS) FROM df2)
 """)
 
-results = min.join(max,['Month'],"outer")
+results = min.join(max,['Incidents','Month'],"outer")
 results.show()
 #results.toDF(["Month", "Total incidents"]).repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("worstAndBestMonthToFlight")
 

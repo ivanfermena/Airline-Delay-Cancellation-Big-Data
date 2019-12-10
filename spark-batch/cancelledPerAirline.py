@@ -18,7 +18,7 @@ df = sqlContext.read.load("2009-2018.csv",
 df.registerTempTable("df")
 
 results = sqlContext.sql("""
-    SELECT COUNT(OP_CARRIER) as Cancelations, OP_CARRIER as Airline
+    SELECT COUNT(OP_CARRIER) as Cancellations, OP_CARRIER as Airline
     FROM df
     WHERE CANCELLED = 1.0
     GROUP BY OP_CARRIER

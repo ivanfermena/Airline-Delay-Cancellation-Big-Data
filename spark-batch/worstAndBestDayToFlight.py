@@ -45,16 +45,15 @@ partial3.toDF(["MONTH", "DAY", "INCIDENTS"]).registerTempTable("df2")
 min =  sqlContext.sql("""
     SELECT MONTH as Month, DAY as Day, INCIDENTS as Incidents
     FROM df2
-    WHERE INCIDENTS = (SELECT MIN(INCIDENTS) FROM df2) AND MONTH <> 2 AND DAY <> 29
+    WHERE INCIDENTS = (SELECT MIN(INCIDENTS) FROM df2 WHERE MONTH <> 2 AND DAY <> 29)
 """)
 
 max = sqlContext.sql("""
     SELECT MONTH as Month, DAY as Day, INCIDENTS as Incidents
     FROM df2
-    WHERE INCIDENTS = (SELECT MAX(INCIDENTS) FROM df2) AND MONTH <> 2 AND DAY <> 29
+    WHERE INCIDENTS = (SELECT MAX(INCIDENTS) FROM df2) 
 """)
 
-results = min.join(max,['Month', 'Day'],"outer")
+results = min.join(max,['Incidents', 'Month', 'Day'],"outer")
 results.show()
 #results.toDF(["Month", "Day", "Total incidents"]).repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("worstAndBestDayToFlight")
-
