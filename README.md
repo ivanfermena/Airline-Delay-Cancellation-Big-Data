@@ -38,6 +38,19 @@ Para la ejecución de esta parte del código serán necesarios los siguientes el
 
 3. Código fuente 
 >Será necesario descargar el código fuente de la parte batch del proyecto se encuentra en la carpeta **spark-batch** del repositorio.  [link](https://github.com/ivanfermena/bigdata-airline-delay-cancellation/tree/develop/spark-batch)
+4. Dependencias
+>Instalar el manager de paquetes de python
+	
+	sudo apt-get install python-pip
+>Instalar el constructor de python thinker
+
+	sudo apt-get install python-tk
+>Instalar todos los paquetes necesarios
+	
+	pip install matplotlib
+	pip install scikit-learn
+	pip install pandas
+	pip install plotly_express
 
 ### Salidas de los scripts
 Si el usuario quiere obtener una salida en formato csv deberá des-comentar la última linea de todos los scripts, la ejecución del programa será mas lenta pero nos permitirá obtener los resultados de ejecución de una manera mas clara.
