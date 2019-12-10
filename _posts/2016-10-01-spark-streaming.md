@@ -15,14 +15,22 @@ Para ello hemos extraido una parte de los datos y hemos creado un socket que env
 
 ## Ficheros 
 
-
+* `clientSparkStreaming.py`
+* `serverSparkStreaming.py`
 
 ## Ejecución
 
-Para ejecutar este ejemplo es necesario ejecutar primero el archivo:
+Para ejecutar este ejemplo es necesario ejecutar primero el server y esperar a que se quede en espera un par de segundo.
 
-* `delayPerAirline.py`
-* `delayPerAirline.py`
+{% highlight %}
+spark-submit serverSparkStreaming.py
+{% endhighlight %}
+
+Tras la espera de esos segundos y cuando el terminal no muestra mas mensajes, se pued elanzar el cliente:
+
+{% highlight %}
+spark-submit clientSparkStreaming.py
+{% endhighlight %}
 
 ## Código
 
@@ -31,7 +39,8 @@ A continucacion mostraremos los dos archivos de pyhon que hemos usado para el pr
 ### Cliente
 
 **Code:** El codigo del socket del cliente se muestra enteró ya que es claro y sencillo. Abriendo una conexion especifica en local y enviando con ".send" cada una de las lineas leidas cada 3 segundos.
-{% highlight python %}
+
+{% highlight js %}
 
 import socket
 import time
