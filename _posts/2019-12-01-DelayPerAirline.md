@@ -21,11 +21,11 @@ Son necearios los siguientes ficheros :
 >Una vez situados en el directorio que contiene el **dataset** y el **fichero de código** ejecutamos el siguiente comando en la shell
 
     spark-submit delayPerAirline.py
+
 >**Nota:** si queremos generar un salida en formato csv se debe descomentar la última linea de código del fichero **.py**  
 Para visualizar el contenido de la salida ejecutar el siguiente comando en la shell
 
     cat /delayPerAirline/*.csv
-
 
 ## Resultado
 
