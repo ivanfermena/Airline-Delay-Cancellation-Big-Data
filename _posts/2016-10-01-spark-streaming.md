@@ -2,7 +2,7 @@
 layout: post
 title:  "Actualizacion en tiempo real de los vuelos con mas retrasos por dia"
 description: A continuacion mostraremos el caso de uso elegido para realizar la parte de procesamiento en streming con Spark Streming. En esta hemos elegido mostrar los vuelos con mas retrasos (top 10) entre dos ciudades de EEUU, usando como ventana 3 segundo y reiniciando una vez al dia dicha clasificacion.
-categories: Streming
+categories: streming
 ---
 
 ![sample post]({{site.baseurl}}/images/image-2.png)
