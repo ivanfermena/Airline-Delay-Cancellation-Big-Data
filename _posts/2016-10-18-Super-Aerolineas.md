@@ -37,9 +37,28 @@ Para visualizar el contenido de la salida ejecutar el siguiente comando en la sh
 
 Partiendo del dataframe que contiene todo el dataset inicial se ejecuta una consulta que a grupa todos los vuelos por aerolinea, que salieron con retraso de sus destinos pero llegaron antes de la hora de llegada establecida. La salida es la siguiente: 
 
-    +---------+-----+---+
-    |Incidents|Month|Day|
-    +---------+-----+---+
-    |    30175|    7|  4| <-- Best day
-    |    92478|    6| 23| <-- Worst day
-    +---------+-----+---+
+    +--------+-------+
+    |Airlines|  veces|
+    +--------+-------+
+    |      WN|1834906|
+    |      DL| 794394|
+    |      UA| 634504|
+    |      AA| 604424|
+    |      OO| 298017|
+    |      EV| 258741|
+    |      B6| 204681|
+    |      US| 181306|
+    |      MQ| 166467|
+    |      CO| 118063|
+    |      AS| 108380|
+    |      FL|  83012|
+    |      F9|  70279|
+    |      9E|  54270|
+    |      XE|  53467|
+    |      NK|  38550|
+    |      VX|  37861|
+    |      YV|  37825|
+    |      OH|  26240|
+    |      NW|  23262|
+    +--------+-------+
+    only showing top 20 rows
