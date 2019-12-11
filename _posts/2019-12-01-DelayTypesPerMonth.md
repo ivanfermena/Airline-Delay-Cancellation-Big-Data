@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Tipos de retrasos por meses"
-description:
+description: Que importancia tiene el momento del año en la cuasa del retraso de los vuelos
 categories: batch
 ---
 

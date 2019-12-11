@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "EL mejor y el peor día para volar"
-description:
+title:  "El mejor y el peor día para volar"
+description: En los últimos nueve años cual ha sido el mejor y el peor día del año para volar
 categories: batch
 ---
 

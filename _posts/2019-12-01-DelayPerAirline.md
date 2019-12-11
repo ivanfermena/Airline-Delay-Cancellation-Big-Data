@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Retrasos en función de la aerolinea"
-description:
+description: Existen aerolineas más propensas a los retrasos que otras.
 categories: batch
 ---
 

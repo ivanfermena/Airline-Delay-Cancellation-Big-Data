@@ -1,11 +1,9 @@
 ---
 layout: post
 title:  "Cancelaciones por Aerolínea"
-description: 
+description: Cuantas cancelaciones hay por aerolínea en los últimos 9 años
 categories: batch
 ---
-
-![sample post]({{site.baseurl}}/images/image-2.png)
 
 
 

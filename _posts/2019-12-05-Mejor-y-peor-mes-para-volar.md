@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Mejor y peor mes para volar"
-description:
+title:  "El mejor y el peor mes para volar"
+description: Pensado en viajar dentro EEUU, el mejor y peor més para coger un avión
 categories: batch
 ---
 

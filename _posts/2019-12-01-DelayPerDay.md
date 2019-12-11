@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Retrasos por día"
-description:
+description: Algunos días del año tienen más retrasos que otros pero en general son bastante parecidos a lo largo de 9 años
 categories: batch
 ---
 

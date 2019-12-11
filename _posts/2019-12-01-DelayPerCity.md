@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Retrasos por ciudad"
-description:
+description: Los aeropuertos de algunas ciudades provocan más retrasos que otras
 categories: batch
 ---
 

@@ -1,11 +1,10 @@
 ---
 layout: post
 title:  "Retrasos por Distancia"
-description: 
+description: La distancia puede influir en los retrasos de los vuelos
 categories: batch
 ---
 
-![sample post]({{site.baseurl}}/images/image-2.png)
 
 
 

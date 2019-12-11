@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Cancelaciones en función de las ciudades"
-description:
+description: Que aeropuertos tiene más cancelaciones
 categories: batch
 ---
 

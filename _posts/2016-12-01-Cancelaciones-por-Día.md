@@ -1,11 +1,9 @@
 ---
 layout: post
 title:  "Cancelaciones por día"
-description: 
+description: El número de cancelaciones que puede haber en un día en todo el tráfico interno de EEUU
 categories: batch
 ---
-
-![sample post]({{site.baseurl}}/images/image-2.png)
 
 
 

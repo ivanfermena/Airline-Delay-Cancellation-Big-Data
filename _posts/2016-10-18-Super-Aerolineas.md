@@ -1,16 +1,12 @@
 ---
 layout: post
 title:  "Aerolineas que superan sus retrasos"
-description: 
+description: Cuantos vuelos salen con retraso y llegan en hora
 categories: batch
 ---
 
-![sample post]({{site.baseurl}}/images/image-2.png)
 
-
-# Aerolineas que superan sus retrasos
-
-## Descripcion
+## Descripción
 
 A lo largo de un día se producen miles de retrasos, hemos estudiado que pueden ser producidos por multiples causas como la meteorología, la fecha del año o incluso por la gestión de la aerolinea.
 
