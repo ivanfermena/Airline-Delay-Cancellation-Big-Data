@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  "Analisis de los retrasos entre cada Origen-Destino y si este se produce en el tiempo de vuelo"
+title:  "Análisis de los retrasos entre cada Origen-Destino y, si éste se produce en el tiempo de vuelo"
 description: Estudiamos si el retraso entre un origen y un destino se produce en el tiempo de vuelo, comparando el tiempo que se esperaba de vuelo con el usado realmente. 
 categories: batch
 ---
 
 ![sample post]({{site.baseurl}}/images/plane-red.png)
 
-## Descripcion:
+## Descripción:
 
-En este apartado se va a realizar un analisis de los retrasos con la finalidad de averiguar si este problema es debido al excesivo tiempo del avion en el aire. Conocemos los diferentes tiempos de un vuelo, desde el tiempo en pista hasta las horas en las que levanta las ruedas de la pista y las coloca sobre esta de nuevo en el aterrizaje. Con todos estos datos se puede hacer un analisis meticuloso de dicho caso de uso.
+En este apartado se va a realizar un análisis de los retrasos con la finalidad de averiguar si este problema es debido al excesivo tiempo del avion en el aire. Conocemos los diferentes tiempos de un vuelo, desde el tiempo en pista hasta las horas en las que levanta las ruedas de la pista y las coloca sobre ésta de nuevo, en el aterrizaje. Con todos estos datos se puede hacer un análisis meticuloso de dicho caso de uso.
 
 ## Ficheros 
 
@@ -29,7 +29,7 @@ Para visualizar el contenido de la salida ejecutar el siguiente comando en la sh
 
 ## Código
 
-A continuación mostraremos las secciones más sicnificativas del codigo y su salida. De este modo se comprende el procedimiento usado para las tranformaciones del codigo y analisis.Lo primero que vemos es la importación de todas las librerias necesarias para el uso correcto del ejemplo. Hemos optado por el uso de pandas por la cantidad de funciones matematicas y de tratamiento de dataframes que ofrece, ademas de la integració tan buena que tiene con Apache Spark. Tambien se ha traigo el contexto de Spark, necesario para trabajar en Apache Spark y hemos credo un contexto de spark para poder lanzar consultas sobre el dataframe.
+A continuación mostraremos las secciones más significativas del código y su salida. De este modo se comprende el procedimiento usado para las tranformaciones del código y análisis. Lo primero que vemos es la importación de todas las librerías necesarias para el uso correcto del ejemplo. Hemos optado por el uso de Pandas, por orientación matemática y de tratamiento de dataframes que ofrece, además de la integración tan buena que tiene con Apache Spark. También se importa el contexto de Spark, necesario para trabajar en Apache Spark y hemos creado un contexto de spark SQL para poder lanzar consultas sobre el dataframe.
 
 {% highlight python %}
 
@@ -46,8 +46,8 @@ spark = SparkSession.builder.appName("Aircraft-Delay-Cancelation").getOrCreate()
 
 {% endhighlight %}
 
-Omitiendo la limpieza de datos previa (eliminar NA, vacios...) ahora realizamos una primera valoracion del caso de uso, viendo los retrasos producidos agrupandolos por origen y destino. De este modo tenemos en computo global cuales han sido aquellos vuelos con mas retrasos en total de todos los datasets.
-Nos ha parecido interesante ordenarlos en ambos sentidos, es decir, tambien conocer cuales son los destinos que menos retrasos tenian. 
+Omitiendo la limpieza de datos previa (eliminar NA, vacios...), ahora realizamos una primera valoración del caso de uso, viendo los retrasos producidos agrupándolos por origen y destino. De este modo tenemos en cómputo global cuáles han sido aquellos vuelos con más retrasos en total de todos los datasets.
+Nos ha parecido interesante ordenarlos en ambos sentidos, es decir, también conocer cuáles son los destinos que menos retrasos tenían. 
 
 {% highlight python %}
 
@@ -74,7 +74,7 @@ print(df_grouped_desc.show())
 
 {% endhighlight %}
 
-Un vez realizado este analisis previo obtenemos el tiempo en el aire que ha estado el vuelo (eliminando el tiempo de despegue y aterrizaje) para finalmente usarlo como resta al tiempo esperado de vuelo. De este modo podemos saber si el tiempo de vuelo ha sido un factor principal para el retraso producido, todo esto agrupado por origen y destino. 
+Un vez realizado este análisis previo, obtenemos el tiempo en el aire que ha estado el vuelo. eliminando el tiempo de despegue y aterrizaje, para finalmente, restarlo al tiempo esperado de vuelo. De este modo podemos saber si el tiempo de vuelo ha sido un factor principal para el retraso producido, todo esto agrupado por origen y destino. 
 
 {% highlight python %}
 
@@ -100,9 +100,9 @@ df_fly_time_agruped_desc = df_fly_time_agruped.sort(fn.asc("DIF_TIME_FLY"))
 
 ## Resultado
 
-Los resultados obtenidos se muestran a continuación, primero ordenados por aquellos de menor retraso en el vuelo y despues de mayor a menor. Con estos datos somos capaces de saber cuales son los vuelos que tienen mas retrasos en el vuelo y tomar medidas para solucionarlo. Seria una buena base para proceder a estudiar el motivo del retraso de esos vuelos que se encuentran peor parados en los vuelos.
+Los resultados obtenidos se muestran a continuación, primero ordenados por aquellos de menor retraso en el vuelo y después de mayor a menor. Con estos datos somos capaces de saber cuáles son los vuelos que tienen más retrasos en el vuelo y tomar medidas para solucionarlo. Sería una buena base para proceder a estudiar el motivo del retraso de esos vuelos que se encuentran peor parados en los los tiempos de vuelo.
 
-Ordenados de menos a mayor: 
+Ordenados de menor a mayor: 
 
     +------+----+------------+--------+------------+ 
     |ORIGIN|DEST|ELAPSED_TIME|TIME_FLY|DIF_TIME_FLY| 
