@@ -102,6 +102,12 @@ Plataforma de datos inicial donde se pueden extraer más datos: [oficina de tran
 
 # **Discusión final sobre los objetivos alcanzados, las mejoras sugeridas, las lecciones aprendidas, el trabajo futuro, las ideas interesantes ...**
 
+Como conclusión 
 
+A la hora de plantear mejoras sobre nuestro proyecto sería interesante conocer que es justo lo que necesita el negocio para no lanzar hipotesis aunque bajo nuestro juicio puede que sea un problema ya estudiado por la industria. Sabemos que el dataset es completo y permite realizar grandes estudios sobre el caso de uso, pero seria interesante cruzarlo con otros datasets que tengan datos diferentes de las propias aerolineas que pueden tener información mas detallada de por que surgen estos retrasos y cancelaciones.
+
+Por otra parte pensamos que se podría dar más valor al análisis en tiempo real ya que sería interesante ingresar alertas cuando se superan determinados umbrales para un mayor control de la situación o realizar analisis de otras variables como la cancelación en tiempo real. Además consideramos que el análisis de modelos de machine learning con regresión lineal se queda muy limitado y nos hubiera gustado aplicar modelos mas complejos como Deep Learning o KMeans, que podrian expresas resultados más precisos. Si se consiguierá esto se podría hacer previsiones del tiempo de retraso que va a tener un vuelo a partir de unos parametros, algo importante para poder anticiparse en la toma de decisiones y poder evitarlo.
+
+Aun con todo lo que se puede ampliar el proyecto estamos más que satisfechos con los conocimientos adquiridos, ya que ha constituido una buena aproximación a las tecnologias que han permitido asentar las bases teoricas recibidas durante el curso.
 
 # **Citaciones**
