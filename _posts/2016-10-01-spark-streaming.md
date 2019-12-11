@@ -1,17 +1,17 @@
 ---
 layout: post
-title:  "Actualizacion en tiempo real de los vuelos con mas retrasos por dia"
-description: A continuacion mostraremos el caso de uso elegido para realizar la parte de procesamiento en streming con Spark Streming. En esta hemos elegido mostrar los vuelos con mas retrasos (top 10) entre dos ciudades de EEUU, usando como ventana 3 segundo y reiniciando una vez al dia dicha clasificacion.
+title:  "Actualización en tiempo real de los vuelos con más retrasos por día"
+description: A continuación mostraremos el caso de uso elegido para realizar la parte de procesamiento en streming con Spark Streaming. En ésta, hemos elegido mostrar los vuelos con más retrasos (top 10) entre dos ciudades de EEUU, usando como ventana, 3 segundo y reiniciando una vez al día dicha clasificación.
 categories: streaming
 ---
 
 ![sample post]({{site.baseurl}}/images/spark-streaming.png)
 
-## Descripcion: Muchos datos en batch pero sin datos en tiempo real
+## Descripción: Muchos datos en batch pero sin datos en tiempo real
 
-La principal problematica que hemos encontrado a la hora de analizar en tiemp real los datos, es justamente la falta de una fuente de datos en tiempo real. Sabemos que en el caso de uso que hemos elegido se analizan muchos datos en tiempo real y por eso es necesario realizar este apartado.
+La principal problemática que hemos encontrado a la hora de analizar en tiempo real los datos, es justamente, la falta de una fuente de datos en tiempo real. Sabemos que en el caso de uso que hemos elegido se analizan muchos datos en tiempo real y por eso es necesario realizar este apartado.
 
-Para ello hemos extraido una parte de los datos y hemos creado un socket que envia datos cada cierto tiempo por dicha comunicación, de este modo somos capaces de obtener por Spark Streaming los datos y analizarlos tood lo necesario. El socket lee un "csv" dado por nosotros y envia por esa comunicación una linea cada vez. En nuestro caso, ya que teniamos el socket abierto nos ha parecido interesante devolver los datos analizados al cliente (proveedor de lineas) para completar la comunicación.  
+Para ello hemos extraído una parte de los datos y hemos creado un socket que envía datos cada cierto tiempo por dicho canal, de este modo somos capaces de obtener por Spark Streaming los datos y analizar todo lo necesario. El socket lee un "csv" dado por nosotros y envía por esa comunicación una línea cada vez. En nuestro caso, ya que teníamos el socket abierto nos ha parecido interesante devolver los datos analizados al cliente (proveedor de líneas) para completar la comunicación.  
 
 ## Ficheros 
 
@@ -20,13 +20,13 @@ Para ello hemos extraido una parte de los datos y hemos creado un socket que env
 
 ## Ejecución
 
-Para ejecutar este ejemplo es necesario ejecutar primero el server y esperar a que se quede en espera un par de segundo.
+Para ejecutar este ejemplo es necesario ejecutar primero el server y esperar a que se quede en espera un par de segundos.
 
 {% highlight python %}
 spark-submit serverSparkStreaming.py
 {% endhighlight %}
 
-Tras la espera de esos segundos y cuando el terminal no muestra mas mensajes, se pued elanzar el cliente:
+Tras la espera de esos segundos y cuando el terminal no muestra más mensajes, se puede lanzar el cliente:
 
 {% highlight python %}
 spark-submit clientSparkStreaming.py
@@ -34,11 +34,11 @@ spark-submit clientSparkStreaming.py
 
 ## Código
 
-A continucacion mostraremos los dos archivos de pyhon que hemos usado para el procesamiento en streaming. Comenzaremos con el Cliente, ya que es el mas sencillo y no tiene secciones de codigo de Spark, ya que no realiza ningun porcesamiento ni ransformación. En el caso de el cliente solo es necesario importar la libreria de "sockets" y "time".
+A continuación mostraremos los dos archivos de python que hemos usado para el procesamiento en streaming. Comenzaremos con el Cliente, ya que es el más sencillo y no tiene secciones de código de Spark, ya que no realiza ningún procesamiento ni transformación. En el caso del Cliente sólo es necesario importar la librería de "sockets" y "time".
 
 ### Cliente
 
-**Code:** El codigo del socket del cliente se muestra enteró ya que es claro y sencillo. Abriendo una conexion especifica en local y enviando con ".send" cada una de las lineas leidas cada 3 segundos.
+**Code:** El código del socket del cliente se muestra entero ya que es claro y sencillo. Abriendo una conexion específica en local y enviando con ".send" cada una de las líneas leídas cada 3 segundos.
 
 {% highlight python %}
 
@@ -73,7 +73,7 @@ if __name__ == '__main__':
 
 ### Server
 
-Se analizará ahora por secciones el código de spark usado para analizar dichas lineas enviadas desde el cliente. Primero empezaremos importando todas las librerías necesarias de pyspark, con las que analizaremos cada una de las lineas y realizaremos consultas sobre el dataframe. Como en el cliente necesitaremos el socket y pandas para el analisis de los dataframes. Se ha usado pandas debido a la facilidad a la hora de realizar operaciones sobre conjuntos y su buena integracion con Apache Spark. Por último, se ha importado "io" de "StringIO" para poder tratar un texto especifico (una linea del csv) como si fuera una entrada de un fichero leido.
+Se analizará ahora por secciones, el código de spark usado para analizar dichas líneas enviadas desde el cliente. Primero empezaremos importando todas las librerías necesarias de pyspark, con las que analizaremos cada una de las líneas y realizaremos consultas sobre el dataframe. Como en el cliente, necesitaremos el socket y Pandas para el análisis de los dataframes. Se ha usado Pandas debido a la facilidad a la hora de realizar operaciones sobre conjuntos y su buena integración con Apache Spark. Por último, se ha importado "io" de "StringIO" para poder tratar un texto específico (una línea del csv) como si fuera una entrada de un fichero leído.
 
 {% highlight python %}
 
@@ -95,7 +95,7 @@ names_col = ["FL_DATE","OP_CARRIER","OP_CARRIER_FL_NUM","ORIGIN","DEST","CRS_DEP
 
 {% endhighlight %}
 
-A continuación tenemos la función que realizar el procesamiento de cada una de la lineas y actualiza el dataframe que contiene el top 10 de vuelos que tienen mas retraso. Se explicará con comentarios en el codigo cada una de las lineas pero en cojunto se lee la linea extraida de argumento, comprueba si es el mismo dia de procesamiento y si no vacia el dataframe acumulador, tras esto realizar las agrupaciones determinadas por ORIGEN, DESTINO y DEP_DELAY. Finalmente se ordenan por ese "DEP_DELAY" y devuelve dicho dataframe. 
+A continuación tenemos la función que realiza el procesamiento de cada una de la líneas, y actualiza el dataframe que contiene el top 10 de vuelos que tienen más retraso. Se explicará, con comentarios en el código, cada una de las líneas, pero en conjunto se lee la línea extraída de argumento, comprueba si es el mismo día de procesamiento y si no vacía el dataframe acumulador, tras esto, realiza las agrupaciones determinadas por ORIGEN, DESTINO y DEP_DELAY. Finalmente se ordenan por ese "DEP_DELAY" y devuelve dicho dataframe. 
 
 {% highlight python %}
 
@@ -133,7 +133,7 @@ def proccessSpark(sc, ssc, spark, line, df_top, today_date):
 
 {% endhighlight %}
 
-El siguiente codigo solo genera la estructura necesaria para que se pueda realizra el procesamiento correctamente, especificado mas arriba. Entre ellos se inicia el dataframe que se va a usar a lo largo de la aplicacion y el socket necesario para obtener los datos del cliente.
+El siguiente código sólo genera la estructura necesaria para que se pueda realizar el procesamiento correctamente, especificado más arriba. Entre ellos se inicia el dataframe que se va a usar a lo largo de la aplicación y el socket necesario para obtener los datos del cliente.
 
 {% highlight python %}
 
@@ -176,7 +176,7 @@ if __name__ == '__main__':
 
 ## Resultados 
 
-En esta sección mostramos los resultados del procesamiento en streaming, el primero se ve como solo al producirse dos iteraciones del socket y en la segunda tras haberse producido un numero elevado de iteraciones. Aqui se puede ver como va evolucionando los 10 vuelos que tienen mas retraso, de este modo se puede intentar eviar alertas a los vuelos para aprtar los tiempos y reducir lo maximo estos tiempos o qu epor lo menos o crezcan.
+En esta sección mostramos los resultados del procesamiento en streaming. En el primero se ve sólo al producirse dos iteraciones del socket y en la segunda tras haberse producido un número elevado de iteraciones. Aquí se puede ver, cómo van evolucionando los 10 vuelos que tienen más retraso, de este modo, se puede intentar enviar alertas a los vuelos para adaptar los tiempos y reducir lo máximo estos tiempos o que por lo menos no aumenten.
 
 Output en segunda iteración:
 
