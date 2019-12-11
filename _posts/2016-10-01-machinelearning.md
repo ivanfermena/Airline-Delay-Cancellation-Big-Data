@@ -73,10 +73,10 @@ df_cleaned['CANCELLED'] = df['CANCELLED']
 Tras esto se muestran gráficas determinadas con la libreria antes nombrada "plotly.express" para el analisis de las correlaciones y del caso en particular para ver en detenimiento el origen y destion con la variable de cancelacion.
 
 >Gráficas interactivas de todas las relaciones entre variables(vista general)
-![]({{site.baseurl}}/images/spark-streaming.png)
+![]({{site.baseurl}}/images/grafica_grande.jpg)
 
 >Gráficas de relaciones entre las variables a estudiar
-![]({{site.baseurl}}/images/spark-streaming.png)
+![]({{site.baseurl}}/images/grafica_peque.jpg)
 
 Tras el estudio gráfico procedemos a entrenar nuestro modelo con las variables dictadas y la variable objetivo, dandonos cuenta que no obtenemos ni de cerca un valor valioso para el analisis. Algo que se podia intuir con las gráficas.
 

@@ -179,26 +179,29 @@ if __name__ == '__main__':
 En esta sección mostramos los resultados del procesamiento en streaming, el primero se ve como solo al producirse dos iteraciones del socket y en la segunda tras haberse producido un numero elevado de iteraciones. Aqui se puede ver como va evolucionando los 10 vuelos que tienen mas retraso, de este modo se puede intentar eviar alertas a los vuelos para aprtar los tiempos y reducir lo maximo estos tiempos o qu epor lo menos o crezcan.
 
 Output en segunda iteración:
-+------+----+-------------+
-|ORIGIN|DEST|DEP_DELAY_SUM|
-+------+----+-------------+
-|   EWR| DEN|           -5|
-|   LAS| SFO|           -8|
-+------+----+-------------+
 
-Output en "n" iteraciones.
-+------+----+-------------+
-|ORIGIN|DEST|DEP_DELAY_SUM|
-+------+----+-------------+
-|   LAX| SAN|          299|
-|   EWR| BTV|          134|
-|   IND| ORD|           94|
-|   MSY| EWR|           48|
-|   ORD| MCI|           41|
-|   ORD| CLT|           26|
-|   ALB| ORD|           18|
-|   IAD| DEN|           18|
-|   ORD| DTW|           17|
-|   IAD| FLL|           16|
-+------+----+-------------+
+    +------+----+-------------+
+    |ORIGIN|DEST|DEP_DELAY_SUM|
+    +------+----+-------------+
+    |   EWR| DEN|           -5|
+    |   LAS| SFO|           -8|
+    +------+----+-------------+
+
+Output en "n" iteraciones:
+
+    +------+----+-------------+
+    |ORIGIN|DEST|DEP_DELAY_SUM|
+    +------+----+-------------+
+    |   LAX| SAN|          299|
+    |   EWR| BTV|          134|
+    |   IND| ORD|           94|
+    |   MSY| EWR|           48|
+    |   ORD| MCI|           41|
+    |   ORD| CLT|           26|
+    |   ALB| ORD|           18|
+    |   IAD| DEN|           18|
+    |   ORD| DTW|           17|
+    |   IAD| FLL|           16|
+    +------+----+-------------+
+    
 only showing top 10 rows

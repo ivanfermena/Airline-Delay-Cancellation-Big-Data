@@ -102,7 +102,8 @@ df_fly_time_agruped_desc = df_fly_time_agruped.sort(fn.asc("DIF_TIME_FLY"))
 
 Los resultados obtenidos se muestran a continuación, primero ordenados por aquellos de menor retraso en el vuelo y despues de mayor a menor. Con estos datos somos capaces de saber cuales son los vuelos que tienen mas retrasos en el vuelo y tomar medidas para solucionarlo. Seria una buena base para proceder a estudiar el motivo del retraso de esos vuelos que se encuentran peor parados en los vuelos.
 
-Ordenados de menos a mayor:
+Ordenados de menos a mayor: 
+
     +------+----+------------+--------+------------+ 
     |ORIGIN|DEST|ELAPSED_TIME|TIME_FLY|DIF_TIME_FLY| 
     +------+----+------------+--------+------------+ 
@@ -128,7 +129,8 @@ Ordenados de menos a mayor:
     |   OGG| SJC|       585.0|   578.0|         7.0|
     +------+----+------------+--------+------------+
 
-Ordenados de mayor a menor:
+Ordenados de mayor a menor: 
+
     +------+----+------------+--------+------------+
     |ORIGIN|DEST|ELAPSED_TIME|TIME_FLY|DIF_TIME_FLY|
     +------+----+------------+--------+------------+
