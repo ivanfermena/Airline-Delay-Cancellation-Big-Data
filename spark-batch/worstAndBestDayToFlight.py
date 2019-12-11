@@ -57,3 +57,4 @@ max = sqlContext.sql("""
 results = min.join(max,['Incidents', 'Month', 'Day'],"outer")
 results.show()
 #results.toDF(["Month", "Day", "Total incidents"]).repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("worstAndBestDayToFlight")
+

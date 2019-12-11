@@ -19,43 +19,43 @@ df = sqlContext.read.load("2009-2018.csv",
 df.registerTempTable("df")
 
 dfA = sqlContext.sql("""
-    SELECT YEAR(FL_DATE) as Year, MONTH(FL_DATE) as Month, COUNT(CARRIER_DELAY) as Airline_Delay
+    SELECT  MONTH(FL_DATE) as Month, COUNT(CARRIER_DELAY) as Airline_Delay
     FROM df
     WHERE CARRIER_DELAY > 0.0
-    GROUP BY YEAR(FL_DATE), MONTH(FL_DATE)
-    ORDER BY Year DESC
+    GROUP BY MONTH(FL_DATE)
+    ORDER BY Month DESC
 """)
 
 dfW = sqlContext.sql("""
-    SELECT YEAR(FL_DATE) as Year, MONTH(FL_DATE) as Month, COUNT(WEATHER_DELAY) as Weather_delay
+    SELECT  MONTH(FL_DATE) as Month, COUNT(WEATHER_DELAY) as Weather_delay
     FROM df
     WHERE WEATHER_DELAY > 0.0
-    GROUP BY YEAR(FL_DATE), MONTH(FL_DATE)
-    ORDER BY Year DESC
+    GROUP BY MONTH(FL_DATE)
+    ORDER BY Month DESC
 """)
 
 dfN = sqlContext.sql("""
-    SELECT YEAR(FL_DATE) as Year, MONTH(FL_DATE) as Month, COUNT(NAS_DELAY) as Air_system_delay
+    SELECT MONTH(FL_DATE) as Month, COUNT(NAS_DELAY) as Air_system_delay
     FROM df
     WHERE NAS_DELAY > 0.0
-    GROUP BY YEAR(FL_DATE), MONTH(FL_DATE)
-    ORDER BY Year DESC
+    GROUP BY MONTH(FL_DATE)
+    ORDER BY Month DESC
 """)
 
 dfS = sqlContext.sql("""
-    SELECT YEAR(FL_DATE) as Year, MONTH(FL_DATE) as Month, COUNT(LATE_AIRCRAFT_DELAY) as Security_delay
+    SELECT MONTH(FL_DATE) as Month, COUNT(LATE_AIRCRAFT_DELAY) as Security_delay
     FROM df
     WHERE LATE_AIRCRAFT_DELAY > 0.0
-    GROUP BY YEAR(FL_DATE), MONTH(FL_DATE)
-    ORDER BY Year DESC
+    GROUP BY MONTH(FL_DATE)
+    ORDER BY Month DESC
 """)
 
-partial1 = dfA.join(dfW,['Year', 'Month'],"outer")
-partial2 = partial1.join(dfN,['Year', 'Month'],"outer")
-partial3 = partial2.join(dfS,['Year', 'Month'],"outer")
+partial1 = dfA.join(dfW,['Month'],"outer")
+partial2 = partial1.join(dfN,['Month'],"outer")
+partial3 = partial2.join(dfS,['Month'],"outer")
 
 
-semi_results = partial3.rdd.map(lambda x: (x[0], x[1], x[2], x[3], x[4], x[5], x[2] + x[3] + x[4] + x[5]))
-results = semi_results.map(lambda x: (x[0], x[1], "{:12.2f}".format((x[2]/x[6]) * 100),"{:12.2f}".format((x[3]/x[6]) * 100), "{:12.2f}".format((x[4]/x[6]) * 100), "{:12.2f}".format((x[5]/x[6]) * 100)))
-results.toDF(["Year", "Month", "Airline_Delay", "Weather_delay", "Air_system_delay", "Security_delay"]).show()
-#results.toDF(["Year", "Month", "Airline_Delay", "Weather_delay", "Air_system_delay", "Security_delay"]).repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("delayTypePerMonth")
+semi_results = partial3.rdd.map(lambda x: (x[0], x[1], x[2], x[3], x[4], x[1] + x[2] + x[3] + x[4]))
+results = semi_results.map(lambda x: (x[0], "{:12.2f}".format((x[1]/x[5]) * 100),"{:12.2f}".format((x[2]/x[5]) * 100), "{:12.2f}".format((x[3]/x[5]) * 100), "{:12.2f}".format((x[4]/x[5]) * 100)))
+results.toDF(["Month", "Airline_Delay", "Weather_delay", "Air_system_delay", "Security_delay"]).show()
+#results.toDF(["Month", "Airline_Delay", "Weather_delay", "Air_system_delay", "Security_delay"]).repartition(1).write.format('com.databricks.spark.csv').option("header", "true").save("delayTypePerMonth")
