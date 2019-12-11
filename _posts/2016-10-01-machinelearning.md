@@ -131,9 +131,9 @@ modelo.fit(X, y)
 
 {% highlight python %}
 
-    Coeficiente beta1:  [ 0.00148963 -0.00230434]
-    Error cuadratico medio: 0.02
-    Estadistico R_2: -0.02
+    Coeficiente beta1:  [-0.00112003 -0.06410115]
+    Error cuadratico medio: 116702.73
+    Estadistico R_2: 0.52
 
 {% endhighlight %}
 

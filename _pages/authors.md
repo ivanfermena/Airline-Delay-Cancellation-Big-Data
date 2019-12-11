@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Author
+title: Authors
 permalink: /authors/
 show-in-menu: yes
 ---
