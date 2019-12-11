@@ -36,19 +36,19 @@ El nombre de los programas es el que se encuentra a la derecha en cada uno de lo
 ### Pre-requisitos
 Para la ejecución de esta parte del código serán necesarios los siguientes elementos:
 
-1. Spark
+* Spark
 
 >Puede acceder a la guía de instalación de Spark en modo local de clase desde este enlace.  [link](https://drive.google.com/file/d/1YX3-fyVV9fPQsqp6emV7tDa4-KoNcxva/view)
 
-2. Dataset
+* Dataset
 
 >Será necesario descargar en dataset 2009-2018 en formato csv disponible en este enlace.  [link](https://drive.google.com/file/d/1qd2dmv8isbE4zniFAYOMO0z2r4mokutk/view?usp=sharing)
 
-3. Código fuente 
+* Código fuente 
 
 >Será necesario descargar el código fuente de la parte batch del proyecto se encuentra en la carpeta **spark-batch** del repositorio.  [link](https://github.com/ivanfermena/bigdata-airline-delay-cancellation/tree/develop/spark-batch)
 
-4. Dependencias
+* Dependencias
 
 >Instalar el manager de paquetes de python
 	
