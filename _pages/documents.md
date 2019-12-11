@@ -53,10 +53,13 @@ Con todos estos casos creemos que damos una base solida e información suficient
 
 A parte, realizamos también un modelo donde se pretence averiguar si la unión de Origen-Destion esta correlada de alguna manera con la cancelacion que se produce en los vuelos, si no es asi, búscar cuales son las variables que estan mas fuertemente correladas (que no dependan entre ellas) y aplicar un modelo de regresión lineal para intentar predecir futuros valores, siempre que ese valor sea lo suficientemente valioso.
 
+## Resultados y conclusiones
+
+EN referente a la sección de la realización del modelo de regresión lineal hemos averiguado que este modelo no es suficiente complejo para obtener previsiones concluyentes sobre los datos que se tenian, para esto sería interesante aplicar otros métodos como DeepLearning o KMeans, mucho mas sotisficados.
 
 # **Descripción detallada de su modelo y / o datos: de dónde vino, cómo lo adquirió, qué significa, etc.**
 
-Aunque se conoce que la finalidad del proyecto es realizar un prototipo a pequeña escala del caso de uso, contamos con un número significativo de datos como para ver el problema a resolver. Nuestros datos se basan en información de los vuelos cancelados o con retraso, en vuelos nacionales de los Estados Unidos, desde el año 2009 hasta 2018 y están proporcionados por la oficina de transportes. Se presentan en formato csv divididos por año con un peso total de 7 GB. Por cada dato, tenemos información referente al vuelo, identificándose aerolínea y vuelo. Además de los tiempos de vuelo desglosados en despegue, vuelo y aterrizaje. Con sus respectivos tiempos de retraso. En caso de que el vuelo se retrase, se desglosa las causas y se calcula en minutos. En caso de que se cancele o desvíe el vuelo, también se muestra la causa. La mayoría de campos presenta una buena calidad, aunque no todos están exentos de datos nulos. A continuación se explica detenidamente cada campo del dataset para un mayor entendimiento:
+Aunque se conoce que la finalidad del proyecto es realizar un prototipo a pequeña escala del caso de uso, contamos con un número significativo de datos como para ver el problema a resolver. Nuestros datos se basan en información de los vuelos cancelados o con retraso, en vuelos nacionales de los Estados Unidos, desde el año 2009 hasta 2018 y están proporcionados por la ![oficina de transportes](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time). Se presentan en formato csv divididos por año con un peso total de 7 GB. Por cada dato, tenemos información referente al vuelo, identificándose aerolínea y vuelo. Además de los tiempos de vuelo desglosados en despegue, vuelo y aterrizaje. Con sus respectivos tiempos de retraso. En caso de que el vuelo se retrase, se desglosa las causas y se calcula en minutos. En caso de que se cancele o desvíe el vuelo, también se muestra la causa. A continuación se explica detenidamente cada campo del dataset para un mayor entendimiento:
 
 ![]({{site.baseurl}}/images/dataset1.png)
 
@@ -64,7 +67,9 @@ Aunque se conoce que la finalidad del proyecto es realizar un prototipo a peque�
 
 ![]({{site.baseurl}}/images/dataset3.png)
 
+![]({{site.baseurl}}/images/dataset4.png)
 
+La mayoría de campos presenta una buena calidad, aunque no todos están exentos de datos nulos. Por tanto, se realizó un analisis de los datos y se eliminaron aquellos que podian afectar negativa a los analisis. Aunque la calidad de los datos es buena, la manera de tratar campos no usados en la sección de cancelaciones es a partir de nulos, lo que implica un trato especifico para estos casos.
 
 # **Descripción técnica de la aplicación paralela, modelos de programación, plataforma e infraestructura.**
 
