@@ -5,33 +5,33 @@ description:
 categories: batch
 ---
 
-# Tipos de retrasos en los distintos meses
+# Mejor y peor mes para volar
 
 ## Descripción
-En este test se extraen los porcentajes que representan cada tipo de retraso que se da en los distintos meses del año. Esto nos permitirá analizar que tipo de factores relacionados con el momento del año pueden influir en las causas que provocan que un vuelo se retrase.
+En este test se vamos a mostrar como influye la ruta en los retrasos de los vuelos en los 9 años de vuelos internos en EEUU.
 
 ## Ficheros
 Son necearios los siguientes ficheros :
 
 
-* `delayTypesPerMonth.py`
+* `worstAndBestMonthToFlight.py`
 * `2009-2018.csv`
 
 ## Ejecución
 >Una vez situados en el directorio que contiene el **dataset** y el **fichero de código** ejecutamos el siguiente comando en la shell
 
-    spark-submit delayTypesPerMonth.py
+    spark-submit worstAndBestMonthToFlight.py
 
 
 >**Nota:** si queremos generar un salida en formato csv se debe descomentar la última linea de código del fichero **.py**  
 Para visualizar el contenido de la salida ejecutar el siguiente comando en la shell
 
-    cat /delayTypesPerMonth/*.csv
+    cat /worstAndBestMonthToFlight/*.csv
 
 
 ## Resultado
 
-Partiendo del dataframe inicial se ejecutan varias consultas que relacionan los tipos de retrasos con el momento del año en el que se producen. Calculando así el porcentaje de cada tipo de retraso durante el mes. La salida generada es la siguiente: 
+Partiendo del dataframe inicial se ejecutan varias consultas y se mezclan entre ellas para generar un dataframe con toda la información de todos los meses de todos los años. De entre estos se busca el mes que menos incidencias registró y el que más. La salida es la siguiente: 
 
         
     +-----+-------------+-------------+----------------+--------------+

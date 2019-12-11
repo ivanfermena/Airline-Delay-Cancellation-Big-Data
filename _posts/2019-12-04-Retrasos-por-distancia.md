@@ -5,33 +5,33 @@ description:
 categories: batch
 ---
 
-# Tipos de retrasos en los distintos meses
+# Tipos de retrasos por su distancia
 
 ## Descripción
-En este test se extraen los porcentajes que representan cada tipo de retraso que se da en los distintos meses del año. Esto nos permitirá analizar que tipo de factores relacionados con el momento del año pueden influir en las causas que provocan que un vuelo se retrase.
+En este test se vamos a mostrar como influye la distancia en los retrasos de los vuelos en los 9 años de vuelos internos en EEUU.
 
 ## Ficheros
 Son necearios los siguientes ficheros :
 
 
-* `delayTypesPerMonth.py`
+* `delayPerDistance.py`
 * `2009-2018.csv`
 
 ## Ejecución
 >Una vez situados en el directorio que contiene el **dataset** y el **fichero de código** ejecutamos el siguiente comando en la shell
 
-    spark-submit delayTypesPerMonth.py
+    spark-submit delayPerMonth.py
 
 
 >**Nota:** si queremos generar un salida en formato csv se debe descomentar la última linea de código del fichero **.py**  
 Para visualizar el contenido de la salida ejecutar el siguiente comando en la shell
 
-    cat /delayTypesPerMonth/*.csv
+    cat /delayDistance/*.csv
 
 
 ## Resultado
 
-Partiendo del dataframe inicial se ejecutan varias consultas que relacionan los tipos de retrasos con el momento del año en el que se producen. Calculando así el porcentaje de cada tipo de retraso durante el mes. La salida generada es la siguiente: 
+Partiendo del dataframe inicial se ejecuta una consulta que agrupa por distancia todos los retrasos producidos. La salida generada es la siguiente: 
 
         
     +-----+-------------+-------------+----------------+--------------+

@@ -29,7 +29,7 @@ Para visualizar el contenido de la salida ejecutar el siguiente comando en la sh
 
 ## Resultado
 
-Partiendo del dataframe inicial se ejecutan varias consultas y se mezclan entre ellas para generar un dataframe con toda la información de todos los días de todos los años. De entre estos se busca el día que más incidencias registró y el que más. La salida es la siguiente: 
+Partiendo del dataframe inicial se ejecutan varias consultas y se mezclan entre ellas para generar un dataframe con toda la información de todos los días de todos los años. De entre estos se busca el día que menos incidencias registró y el que más. La salida es la siguiente: 
 
     +---------+-----+---+
     |Incidents|Month|Day|
