@@ -18,7 +18,6 @@ En esta guía se explica la manera de hacerlo en un sistema linux.
 
 ## Batch
 Esta sección se centra en el análisis del dataset al completo y se compone del siguientes programas/scripts :
--  Retrasos en mismas rutas ~ ml
 -  Retrasos en el aire ~ delay_per_journey
 -  Cancelaciones por dia ~ cancelledPerDay
 - Cancelaciones por aerolinea ~ cancelledPerAirline
