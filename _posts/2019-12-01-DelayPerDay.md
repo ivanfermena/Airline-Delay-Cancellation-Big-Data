@@ -31,6 +31,7 @@ Para visualizar el contenido de la salida ejecutar el siguiente comando en la sh
 
 Partiendo del dataframe inicial se ejecuta una consulta que nos agrupa los retrasos en funcón del día. La salida generada es la siguiente.
 
+
     +------+-------------------+
     |Delays|               date|
     +------+-------------------+
