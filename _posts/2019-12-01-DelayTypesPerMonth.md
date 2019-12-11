@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Tipos de retrasos en los distintos meses"
+title:  "Tipos de retrasos por meses"
 description:
 categories: batch
 ---
 
-# Tipos de retrasos en los distintos meses
+
 
 ## Descripción
 En este test se extraen los porcentajes que representan cada tipo de retraso que se da en los distintos meses del año. Esto nos permitirá analizar que tipo de factores relacionados con el momento del año pueden influir en las causas que provocan que un vuelo se retrase.

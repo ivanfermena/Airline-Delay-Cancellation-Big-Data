@@ -5,7 +5,6 @@ description:
 categories: batch
 ---
 
-# Retrasos en función de las ciudades
 
 ## Descripción
 En este test se compruebarán que cantidad de retrasos se producen por cada una de las ciudades de origen del buelo, de esta manera podemos estudiar como están relacionadas al zona geográfica y el clima con la causa de los retrasos.

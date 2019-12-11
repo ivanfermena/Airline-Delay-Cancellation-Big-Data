@@ -5,7 +5,7 @@ description:
 categories: batch
 ---
 
-# Tipos de retrasos en los distintos meses
+
 
 ## Descripción
 En este test se vamos a buscar cual es el mes del año que que tiene más retrasos en los 9 años de vuelos internos en EEUU.
@@ -35,7 +35,7 @@ Partiendo del dataframe inicial se ejecuta una consulta que agrupa por mes todos
 
 
     +----+-----+------------+
-    |Year|Month|      Delays|
+    |Year|Month|      Delays?|
     +----+-----+------------+
     |2011|   12|        3713|
     |2018|   12|        6752|

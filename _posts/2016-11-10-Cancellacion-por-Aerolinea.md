@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Aerolineas que superan sus retrasos"
+title:  "Cancelaciones por Aerolínea"
 description: 
 categories: batch
 ---
@@ -8,7 +8,7 @@ categories: batch
 ![sample post]({{site.baseurl}}/images/image-2.png)
 
 
-# Cancelaciones por Aerolínea
+
 
 ## Descripción
 

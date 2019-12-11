@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Tipos de retrasos en los distintos meses"
+title:  "Tipos de retrasos por su distancia"
 description:
 categories: batch
 ---
 
-# Tipos de retrasos por su distancia
+
 
 ## Descripción
 En este test se vamos a mostrar como influye la distancia en los retrasos de los vuelos en los 9 años de vuelos internos en EEUU.

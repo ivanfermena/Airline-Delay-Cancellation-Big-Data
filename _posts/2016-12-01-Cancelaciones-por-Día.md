@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Aerolineas que superan sus retrasos"
+title:  "Cancelaciones por día"
 description: 
 categories: batch
 ---
@@ -8,7 +8,7 @@ categories: batch
 ![sample post]({{site.baseurl}}/images/image-2.png)
 
 
-# Cancelaciones por día
+
 
 ## Descripción
 
@@ -60,3 +60,4 @@ Partiendo del dataframe que contiene todo el dataset inicial se ejecuta una cons
     |         244|2009-01-19 00:00:00|
     |         254|2009-01-20 00:00:00|
     +------------+-------------------+
+    only showing 20 rows

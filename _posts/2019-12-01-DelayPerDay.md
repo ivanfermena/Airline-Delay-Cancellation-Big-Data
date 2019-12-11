@@ -5,7 +5,6 @@ description:
 categories: batch
 ---
 
-# Retrasos en función del día
 
 ## Descripción
 En este test se compruebarán que cantidad de retrasos se producen cada día, esto nos permite analizar que tipo de razones pueden provocar dichos retrasos.

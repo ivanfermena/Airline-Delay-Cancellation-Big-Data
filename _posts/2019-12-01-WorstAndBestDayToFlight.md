@@ -5,7 +5,7 @@ description:
 categories: batch
 ---
 
-# El mejor y el peor día para volar
+
 
 ## Descripción
 En este test se calcula cual es mejor y el peor día del año basado en la cantidad de incidencias que ocupan cada uno de los dias del año.

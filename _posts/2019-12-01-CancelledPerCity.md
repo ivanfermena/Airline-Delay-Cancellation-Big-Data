@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Cancelaciones por ciudad"
+title:  "Cancelaciones en función de las ciudades"
 description:
 categories: batch
 ---
 
-# Cancelaciones en función de las ciudades
+
 
 ## Descripción
 En este test se compruebarán que cantidad de cancelaciones se producen por cada una de las ciudades de origen del buelo, de esta manera podemos estudiar como están relacionadas al zona geográfica y el clima con la causa de las cancelaciones.

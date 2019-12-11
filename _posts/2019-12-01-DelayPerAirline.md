@@ -1,11 +1,10 @@
 ---
 layout: post
-title:  "Retrasos por aerolineas"
+title:  "Retrasos en función de la aerolinea"
 description:
 categories: batch
 ---
 
-# Retrasos en función de la aerolinea
 
 ## Descripción
 En este test se compruebarán que aerolineas acumulan más retrasos en el total del histórico. Esto nos ayudará a la hora de encontrar factores clave, ya que podremos buscar las diferencias y similitudes que tienen las distintas aerolineas en función de la densidad de retrasos.
