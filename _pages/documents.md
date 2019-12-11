@@ -69,15 +69,26 @@ Aunque se conoce que la finalidad del proyecto es realizar un prototipo a peque�
 
 ![]({{site.baseurl}}/images/dataset4.png)
 
-La mayoría de campos presenta una buena calidad, aunque no todos están exentos de datos nulos. Por tanto, se realizó un analisis de los datos y se eliminaron aquellos que podian afectar negativa a los analisis. Aunque la calidad de los datos es buena, la manera de tratar campos no usados en la sección de cancelaciones es a partir de nulos, lo que implica un trato especifico para estos casos.
+La mayoría de campos presenta una buena calidad, aunque no todos están exentos de datos nulos. Por tanto, se realizó un analisis de los datos y se eliminaron aquellos que podian afectar negativa a los analisis. Aunque la calidad de los datos es buena, la manera de tratar campos no usados en la sección de cancelaciones es a partir de nulos, lo que implica un trato específico para estos casos.
+
+
 
 # **Descripción técnica de la aplicación paralela, modelos de programación, plataforma e infraestructura.**
 
+Para la realización de la práctica hemos usado como herramienta Apache Spark, tanto para la procesamiento en tiempo real como para batch, de este modo usamos una única herramienta unificada para ambos procesos. Debido a la cantidad de datos con la que disponemos, usaremos ejemplos más pequeños de los datos para el procesamiento en batch y una sección más pequeña y preparada para el procesamiento en tiempo real, de este modo creamos todo el sistema necesario para la insercción de grandes cantidades de datos y reales.
 
+Como infraestructura usaremos el procesamiento cloud de aws, ya que no contamos con infraestructura suficiente para hacer un cluster “On-Premises”. Se tiene pensado el uso de las máquinas locales con varios cores y código subido a github para realizar el desarrollo, debido a una mayor rápidez de desarrollo en un ambiente en local y posteriormente desplegarlo en un cluster en aws. Como se especificará en otras secciones es importante el uso de la potencia del cloud computing en el caso de usar todos los datos provistos en la versión final debido a la falta de computación en ambito local y el tiempo elevado que necesita para terminar el proceso especificado.
+
+Usaremos como opción dada en aws el paquete de 4 vCPUs (m4.xlarge) de EMR, de este modo sabemos que tendremos el procesamiento necesario para la realización de estadísticas y gráficas que necesitamos. En el caso de streaming hemos usado esta misma distribución de EMR pero se podría plantear aumentarlo en pruebas diarias, las cuales no hemos realizado pero es posible que al ser una ventana diaria, en las últimas horas del día el procesamiento sea muy grande y pueda llegar a ser necesario mas procesamiento. Para este último caso se estima que EMR de aws es la mejor elección debido a la elasticidad que te da si necesitas más procesamiento.
 
 # **Enlaces al repositorio con código fuente, conjuntos de datos de evaluación y casos de prueba**
 
+El código se encuentra a lo largo de las explicaciones de cada uno de los casos, asi como una explicación de como probar el caso en particular, librerias necesarias y los dataset necesarios para obtener la misma salida que mostramos. Aún asi las explicaciones de cada caso no estan completas y se aconseja coger el codigo del repositorio principal.
 
+Página web donde estan todos los casos explicados: ![GitHub Page](https://ivanfermena.github.io/airline-delay-cancellation-big-data/)
+Repositorio de GitHub: ![GitHub](https://github.com/ivanfermena/code-airline-delay-cancellation-big-data/)
+Enlace donde se encuentran los datos para los casos: ![Drive]()
+Plataforma de datos inicial donde se pueden extraer más datos: ![oficina de transportes](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time)
 
 # **Descripción técnica del diseño del software, línea de base del código, dependencias, cómo usar el código y el sistema y el entorno necesarios para reproducir sus pruebas.**
 
