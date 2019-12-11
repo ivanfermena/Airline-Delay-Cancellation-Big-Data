@@ -59,7 +59,7 @@ EN referente a la sección de la realización del modelo de regresión lineal he
 
 # **Descripción detallada de su modelo y / o datos: de dónde vino, cómo lo adquirió, qué significa, etc.**
 
-Aunque se conoce que la finalidad del proyecto es realizar un prototipo a pequeña escala del caso de uso, contamos con un número significativo de datos como para ver el problema a resolver. Nuestros datos se basan en información de los vuelos cancelados o con retraso, en vuelos nacionales de los Estados Unidos, desde el año 2009 hasta 2018 y están proporcionados por la ![oficina de transportes](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time). Se presentan en formato csv divididos por año con un peso total de 7 GB. Por cada dato, tenemos información referente al vuelo, identificándose aerolínea y vuelo. Además de los tiempos de vuelo desglosados en despegue, vuelo y aterrizaje. Con sus respectivos tiempos de retraso. En caso de que el vuelo se retrase, se desglosa las causas y se calcula en minutos. En caso de que se cancele o desvíe el vuelo, también se muestra la causa. A continuación se explica detenidamente cada campo del dataset para un mayor entendimiento:
+Aunque se conoce que la finalidad del proyecto es realizar un prototipo a pequeña escala del caso de uso, contamos con un número significativo de datos como para ver el problema a resolver. Nuestros datos se basan en información de los vuelos cancelados o con retraso, en vuelos nacionales de los Estados Unidos, desde el año 2009 hasta 2018 y están proporcionados por la [oficina de transportes](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time). Se presentan en formato csv divididos por año con un peso total de 7 GB. Por cada dato, tenemos información referente al vuelo, identificándose aerolínea y vuelo. Además de los tiempos de vuelo desglosados en despegue, vuelo y aterrizaje. Con sus respectivos tiempos de retraso. En caso de que el vuelo se retrase, se desglosa las causas y se calcula en minutos. En caso de que se cancele o desvíe el vuelo, también se muestra la causa. A continuación se explica detenidamente cada campo del dataset para un mayor entendimiento:
 
 ![]({{site.baseurl}}/images/dataset1.png)
 
@@ -71,7 +71,9 @@ Aunque se conoce que la finalidad del proyecto es realizar un prototipo a peque�
 
 La mayoría de campos presenta una buena calidad, aunque no todos están exentos de datos nulos. Por tanto, se realizó un analisis de los datos y se eliminaron aquellos que podian afectar negativa a los analisis. Aunque la calidad de los datos es buena, la manera de tratar campos no usados en la sección de cancelaciones es a partir de nulos, lo que implica un trato específico para estos casos.
 
+Aunque contamos con muchos datos no tenemos una entrada de datos por via streaming, por ello la principal problematica que hemos encontrado a la hora de analizar en tiempo real los datos, es justamente la falta de una fuente de datos en tiempo real. Sabemos que en el caso de uso que hemos elegido se analizan muchos datos en tiempo real y por eso es necesario realizar este apartado.
 
+Para ello hemos extraido una parte de los datos y hemos creado un socket que envia datos cada cierto tiempo por dicha comunicación, de este modo somos capaces de obtener por Spark Streaming los datos y analizarlos tood lo necesario. El socket lee un “csv” dado por nosotros y envía por esa comunicación una línea cada vez. En nuestro caso, ya que teniamos el socket abierto nos ha parecido interesante devolver los datos analizados al cliente (proveedor de lineas) para completar la comunicación.
 
 # **Descripción técnica de la aplicación paralela, modelos de programación, plataforma e infraestructura.**
 
@@ -85,10 +87,10 @@ Usaremos como opción dada en aws el paquete de 4 vCPUs (m4.xlarge) de EMR, de e
 
 El código se encuentra a lo largo de las explicaciones de cada uno de los casos, asi como una explicación de como probar el caso en particular, librerias necesarias y los dataset necesarios para obtener la misma salida que mostramos. Aún asi las explicaciones de cada caso no estan completas y se aconseja coger el codigo del repositorio principal.
 
-Página web donde estan todos los casos explicados: ![GitHub Page](https://ivanfermena.github.io/airline-delay-cancellation-big-data/)
-Repositorio de GitHub: ![GitHub](https://github.com/ivanfermena/code-airline-delay-cancellation-big-data/)
-Enlace donde se encuentran los datos para los casos: ![Drive]()
-Plataforma de datos inicial donde se pueden extraer más datos: ![oficina de transportes](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time)
+Página web donde estan todos los casos explicados: [GitHub Page](https://ivanfermena.github.io/airline-delay-cancellation-big-data/)
+Repositorio de GitHub: [GitHub](https://github.com/ivanfermena/code-airline-delay-cancellation-big-data/)
+Enlace donde se encuentran los datos para los casos: [Drive]()
+Plataforma de datos inicial donde se pueden extraer más datos: [oficina de transportes](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time)
 
 # **Descripción técnica del diseño del software, línea de base del código, dependencias, cómo usar el código y el sistema y el entorno necesarios para reproducir sus pruebas.**
 
