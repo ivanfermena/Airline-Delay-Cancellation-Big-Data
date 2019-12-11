@@ -13,16 +13,16 @@ Esta sección se centra en el análisis del dataset al completo y se compone del
 -  Retrasos en mismas rutas ~
 -  Retrasos en el aire ~
 -  Cancelaciones por dia ~ cancelledPerDay
-- Cancelaciones por aerolinea ~ cancelledPerAirline
+-  Cancelaciones por aerolinea ~ cancelledPerAirline
 -  Cancelaciones por lugar ~ cancelledPerCity
-- Retrasos por dia ~ delayPerDay
-- Retrasos por aerolinea ~ delayPerAirline
-- Retrasos por lugar ~ delayPerCity
+-  Retrasos por dia ~ delayPerDay
+-  Retrasos por aerolinea ~ delayPerAirline
+-  Retrasos por lugar ~ delayPerCity
 -  Porcentaje de tipo de Retraso ~ DelayTypePerMonth
-- Relacion distancia retraso ~ delayPerDistance
+-  Relacion distancia retraso ~ delayPerDistance
 -  Meses que mas retrasos tienen ~ delayPerMonth
 -  Peor y mejor día para volar ~ worstAndBestDayToFlight
-- Peor y mejor més para volar ~ worstAndBestMonthToFlight
+-  Peor y mejor més para volar ~ worstAndBestMonthToFlight
 
 El nombre de los programas es el que se encuentra a la derecha en cada uno de los casos de uso seguido de una extensión **.py**
 ### Pre-requisitos
