@@ -5,13 +5,6 @@ permalink: /documents/
 show-in-menu: yes
 ---
 
-COSAS QUE FALTAN:
-
-- [ ] Punto dos las conclusiones/resultados que hemos sacado y otras soluciones (no se si existen)
-- [ ] Seccion de citaciones.
-- [ ] Ampliar lo necesario, revisar y exportar a pdf
-
-El proyecto tiene que ser capaz de justificar los siguientes apartados:
 
 * Do not remove this line (it will not be displayed) 
 {:toc}
