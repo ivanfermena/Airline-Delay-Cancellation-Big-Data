@@ -45,7 +45,7 @@ Para la ejecución de esta parte del código serán necesarios los siguientes el
 
 * Código fuente 
 
->Será necesario descargar el código fuente de la parte batch del proyecto se encuentra en la carpeta **spark-batch** del repositorio.  [link](https://github.com/ivanfermena/bigdata-airline-delay-cancellation/tree/develop/spark-batch)
+>Será necesario descargar el código fuente de la parte batch del proyecto se encuentra en la carpeta **spark-batch** del repositorio.  [link](https://github.com/ivanfermena/code-airline-delay-cancellation-big-data)
 
 * Dependencias
 
