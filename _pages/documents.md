@@ -127,18 +127,19 @@ El nombre de los programas es el que se encuentra a la derecha en cada uno de lo
 ### Pre-requisitos
 Para la ejecución de esta parte del código serán necesarios los siguientes elementos:
 
-1. Spark
+* Spark
 
 >Puede acceder a la guía de instalación de Spark en modo local de clase desde este enlace.  [link](https://drive.google.com/file/d/1YX3-fyVV9fPQsqp6emV7tDa4-KoNcxva/view)
 
-2. Dataset
+* Dataset
 
 >Será necesario descargar en dataset 2009-2018 en formato csv disponible en este enlace.  [link](https://drive.google.com/file/d/1qd2dmv8isbE4zniFAYOMO0z2r4mokutk/view?usp=sharing)
 
-3. Código fuente 
+* Código fuente 
+
 >Será necesario descargar el código fuente de la parte batch del proyecto se encuentra en la carpeta **spark-batch** del repositorio.  [link](https://github.com/ivanfermena/code-airline-delay-cancellation-big-data/)
 
-4. Dependencias
+* Dependencias
 
 >Instalar el manager de paquetes de python
 	
@@ -163,19 +164,23 @@ Si el usuario quiere obtener una salida en formato csv deberá des-comentar la �
 ### Ejecución del código
 Una vez hemos instalado Spark y hemos descagardo el dataset podremos proceder a la ejecución de los programas.  **Remarcamos** que los scripts y el dataset han de estar en el mismo directorio.
 
-Abrimos una shell del ordenador y accedemos al directorio donde se encuentra el código y el dataset
+>Abrimos una shell del ordenador y accedemos al directorio donde se encuentra el código y el dataset
 
 	cd <directorio>/spark-batch
-Para ejecutar un script, por ejemplo el de cancelados al día ejecutamos el siguiente comando
+
+>Para ejecutar un script, por ejemplo el de cancelados al día ejecutamos el siguiente comando
 
 	spark-submit nombreDelFicher.py
-Ej:
+
+>Ej:
 
 	spark-submit cancelledPerDay.py
-Si hemos des-comentado la linea que nos genera un fichero de salida ejecutamos la siguiente orden para visualizar el contenido
+
+>Si hemos des-comentado la linea que nos genera un fichero de salida ejecutamos la siguiente orden para visualizar el contenido
 
 	cat /<nombreDelFicheroEjecutadoSinExtension>/*.csv
-Ej:
+
+>Ej:
 
 	cat /cancelledPerDay/*.csv
 
