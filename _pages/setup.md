@@ -5,7 +5,7 @@ permalink: /setup/
 show-in-menu: yes
 ---
 
-# SetpUp
+# SetUp
 
 Este proyecto se divide en dos partes:
 
