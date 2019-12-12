@@ -5,7 +5,7 @@ permalink: /setup/
 show-in-menu: yes
 ---
 
-# SetpUp
+# SetUp
 
 Este proyecto se divide en dos partes:
 
@@ -17,18 +17,18 @@ En cada una de las partes se explicaran todos los pasos necesarios para probar e
 En esta guía se explica la manera de hacerlo en un sistema linux.
 
 ## Batch
-Esta sección se centra en el análisis del dataset al completo y se compone del siguientes programas/scripts :
--  Retrasos en el aire ~ delay_per_journey
--  Cancelaciones por dia ~ cancelledPerDay
+Esta sección se centra en el análisis del dataset al completo y se compone de los siguientes programas/scripts :
+- Retrasos en el aire ~ delay_per_journey
+- Cancelaciones por dia ~ cancelledPerDay
 - Cancelaciones por aerolinea ~ cancelledPerAirline
--  Cancelaciones por lugar ~ cancelledPerCity
+- Cancelaciones por lugar ~ cancelledPerCity
 - Retrasos por dia ~ delayPerDay
 - Retrasos por aerolinea ~ delayPerAirline
 - Retrasos por lugar ~ delayPerCity
--  Porcentaje de tipo de Retraso ~ DelayTypePerMonth
+- Porcentaje de tipo de Retraso ~ DelayTypePerMonth
 - Relacion distancia retraso ~ delayPerDistance
--  Meses que mas retrasos tienen ~ delayPerMonth
--  Peor y mejor día para volar ~ worstAndBestDayToFlight
+- Meses que mas retrasos tienen ~ delayPerMonth
+- Peor y mejor día para volar ~ worstAndBestDayToFlight
 - Peor y mejor més para volar ~ worstAndBestMonthToFlight
 
 El nombre de los programas es el que se encuentra a la derecha en cada uno de los casos de uso seguido de una extensión **.py**
@@ -65,7 +65,7 @@ Para la ejecución de esta parte del código serán necesarios los siguientes el
 	pip install plotly_express
 
 ### Salidas de los scripts
-Si el usuario quiere obtener una salida en formato csv deberá des-comentar la última linea de todos los scripts, la ejecución del programa será mas lenta pero nos permitirá obtener los resultados de ejecución de una manera mas clara.
+Si el usuario quiere obtener una salida en formato csv deberá descomentar la última linea de todos los scripts, la ejecución del programa será más lenta pero nos permitirá obtener los resultados de ejecución de una manera mas clara.
 
 ### Ejecución del código
 Una vez hemos instalado Spark y hemos descagardo el dataset podremos proceder a la ejecución de los programas.  **Remarcamos** que los scripts y el dataset han de estar en el mismo directorio.
@@ -82,7 +82,7 @@ Una vez hemos instalado Spark y hemos descagardo el dataset podremos proceder a 
 
 	spark-submit cancelledPerDay.py
 
->Si hemos des-comentado la linea que nos genera un fichero de salida ejecutamos la siguiente orden para visualizar el contenido
+>Si hemos descomentado la línea que nos genera un fichero de salida ejecutamos la siguiente orden para visualizar el contenido
 
 	cat /<nombreDelFicheroEjecutadoSinExtension>/*.csv
 

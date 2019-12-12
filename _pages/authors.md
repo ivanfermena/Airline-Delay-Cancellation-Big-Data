@@ -5,13 +5,13 @@ permalink: /authors/
 show-in-menu: yes
 ---
 
-En este proyecto hemos estado trabajando cuatro estudiantes de Ingeniería del Software de la Facultad Informática de la universidad Complutense de Madrid. A continuación se expondrán los nombres e información de cada uno de los miembros: 
+te proyecto ha sido realizado por cuatro estudiantes de Ingeniería del Software de la Facultad Informática de la universidad Complutense de Madrid. A continuación se expondrán los nombres e información de cada uno de los miembros: 
 
 - Íñigo - [Github](https://github.com/igarciaconde) - [Linkedin](https://www.linkedin.com/in/i%C3%B1igo-garcia-conde-trueba-777076a5/)
 
 - Jaime - [Github](https://github.com/jaimepal) - [Linkedin](https://www.linkedin.com/in/jaime-palazón-778260b1/)
 
-- Gerardo - [Github]() - [Linkedin]()
+- Gerardo - [Github](https://github.com/gprossignoli) - [Linkedin](https://www.linkedin.com/in/gerardo-parra-rossignoli)
 
 - Iván - [Github](https://github.com/ivanfermena) - [Linkedin](https://es.linkedin.com/in/ivanfermena)
 

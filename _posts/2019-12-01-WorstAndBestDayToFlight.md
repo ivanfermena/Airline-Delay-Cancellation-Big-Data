@@ -1,17 +1,17 @@
 ---
 layout: post
 title:  "El mejor y el peor día para volar"
-description: En los últimos nueve años cual ha sido el mejor y el peor día del año para volar
+description: En los últimos nueve años cuál ha sido el mejor y el peor día del año para volar
 categories: batch
 ---
 
 
 
 ## Descripción
-En este test se calcula cual es mejor y el peor día del año basado en la cantidad de incidencias que ocupan cada uno de los dias del año.
+En este test se calcula cuál es mejor y el peor día del año basado en la cantidad de incidencias que ocupan cada uno de los dias del año.
 
 ## Ficheros
-Son necearios los siguientes ficheros :
+Son necesarios los siguientes ficheros :
 
 
 * `worstAndBestDayToFlight.py`

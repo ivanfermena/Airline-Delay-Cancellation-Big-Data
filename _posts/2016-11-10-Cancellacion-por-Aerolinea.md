@@ -32,7 +32,7 @@ Para visualizar el contenido de la salida ejecutar el siguiente comando en la sh
 
 ## Resultado
 
-Partiendo del dataframe que contiene todo el dataset inicial se ejecuta una consulta que a grupa todos los vuelos cancelados por aerolinea. La salida es la siguiente: 
+Partiendo del dataframe que contiene todo el dataset inicial se ejecuta una consulta que agrupa todos los vuelos cancelados por aerolinea. La salida es la siguiente: 
 
     +-------------+-------+
     |Cancellations|Airline|
