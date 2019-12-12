@@ -212,7 +212,6 @@ Como conclusión podemos dictar claramente que obtenemos una mejora sustancial e
 
 # **Discusión final sobre los objetivos alcanzados, las mejoras sugeridas, las lecciones aprendidas, el trabajo futuro, las ideas interesantes ...**
 
-Como conclusión 
 
 A la hora de plantear mejoras sobre nuestro proyecto sería interesante conocer, qué es justo lo que necesita el negocio, para no lanzar hipótesis poco fundamentadas, aunque bajo nuestro juicio puede que sea un problema ya estudiado por la industria. Sabemos que el dataset es completo y permite realizar grandes estudios sobre el caso de uso, pero sería interesante cruzarlo con otros datasets que tengan datos diferentes de las propias aerolíneas que pueden tener información más detallada de por qué surgen estos retrasos y cancelaciones.
 
@@ -221,6 +220,4 @@ Por otra parte pensamos que se podría dar más valor al análisis en tiempo rea
 En el caso determinado del procesamiento en streaming no nos hemos visto limitados por aquellos problemas reales del análisis en tiempo real, como podría ser la latencia. Sería algo interesante de estudiar en un determinado momento futuro llevando una extensión de la parte de streaming a cloud y estudiar como afecta esa latencia al rendimiento del modelo.
 
 Aún con todo lo que se puede ampliar el proyecto, estamos más que satisfechos con los conocimientos adquiridos, ya que se ha constituido una buena aproximación a las tecnologías que han permitido asentar las bases teóricas recibidas durante el curso. Nos permite poder tomar decisiones de cuando es determinado el uso del Big Data y cloud, justificando correctamente su uso, asi como sus ventajas y desventajas.
-
-# **Citaciones**
 
