@@ -1,17 +1,17 @@
 ---
 layout: post
 title:  "Cancelaciones en función de las ciudades"
-description: Que aeropuertos tiene más cancelaciones
+description: Qué aeropuertos tienen más cancelaciones
 categories: batch
 ---
 
 
 
 ## Descripción
-En este test se compruebarán que cantidad de cancelaciones se producen por cada una de las ciudades de origen del buelo, de esta manera podemos estudiar como están relacionadas al zona geográfica y el clima con la causa de las cancelaciones.
+En este test se comprobarán que cantidad de cancelaciones se producen por cada una de las ciudades de origen del vuelo, de esta manera podemos estudiar cómo están relacionadas a la zona geográfica y el clima con la causa de las cancelaciones.
 
 ## Ficheros
-Son necearios los siguientes ficheros :
+Son necesarios los siguientes ficheros :
 
 
 * `cancelledPerCity.py`

@@ -5,7 +5,6 @@ description: Estudiamos si el retraso entre un origen y un destino se produce en
 categories: batch
 ---
 
-![sample post]({{site.baseurl}}/images/plane-red.png)
 
 ## Descripción:
 

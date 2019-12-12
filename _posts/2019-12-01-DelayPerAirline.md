@@ -7,10 +7,10 @@ categories: batch
 
 
 ## Descripción
-En este test se compruebarán que aerolineas acumulan más retrasos en el total del histórico. Esto nos ayudará a la hora de encontrar factores clave, ya que podremos buscar las diferencias y similitudes que tienen las distintas aerolineas en función de la densidad de retrasos.
+En este test se comprobarán que aerolineas acumulan más retrasos en el total del histórico. Esto nos ayudará a la hora de encontrar factores clave, ya que podremos buscar las diferencias y similitudes que tienen las distintas aerolineas en función de la densidad de retrasos.
 
 ## Ficheros
-Son necearios los siguientes ficheros :
+Son necesarios los siguientes ficheros :
 
 
 * `delayPerAirline.py`

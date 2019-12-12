@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Tipos de retrasos por meses"
-description: Que importancia tiene el momento del año en la cuasa del retraso de los vuelos
+description: Qué importancia tiene el momento del año en la causa del retraso de los vuelos
 categories: batch
 ---
 
@@ -11,7 +11,7 @@ categories: batch
 En este test se extraen los porcentajes que representan cada tipo de retraso que se da en los distintos meses del año. Esto nos permitirá analizar que tipo de factores relacionados con el momento del año pueden influir en las causas que provocan que un vuelo se retrase.
 
 ## Ficheros
-Son necearios los siguientes ficheros :
+Son necesarios los siguientes ficheros :
 
 
 * `delayTypesPerMonth.py`
