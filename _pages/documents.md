@@ -8,7 +8,8 @@ show-in-menu: yes
 COSAS QUE FALTAN:
 
 - [ ] Punto dos las conclusiones/resultados que hemos sacado y otras soluciones (no se si existen)
-- [ ] 
+- [ ] Seccion de citaciones.
+- [ ] Ampliar lo necesario, revisar y exportar a pdf
 
 El proyecto tiene que ser capaz de justificar los siguientes apartados:
 
@@ -89,16 +90,110 @@ El código se encuentra a lo largo de las explicaciones de cada uno de los casos
 
 Página web donde están todos los casos explicados: [GitHub Page](https://ivanfermena.github.io/airline-delay-cancellation-big-data/)
 Repositorio de GitHub: [GitHub](https://github.com/ivanfermena/code-airline-delay-cancellation-big-data/)
-Enlace donde se encuentran los datos para los casos: [Drive]()
+Enlace donde se encuentran los datos para los casos: [Drive](https://drive.google.com/file/d/1qd2dmv8isbE4zniFAYOMO0z2r4mokutk/view?usp=sharing)
 Plataforma de datos inicial donde se pueden extraer más datos: [oficina de transportes](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time)
 
 # **Descripción técnica del diseño del software, línea de base del código, dependencias, cómo usar el código y el sistema y el entorno necesarios para reproducir sus pruebas.**
 
+Este proyecto se divide en dos partes ya explicadas en puntos determinados.
 
+- Análisis mediante Spark en modo batch
+- Análisis mediante Spark Streaming de eventos en tiempo real
+
+En todas los analisis realizados se tiene una descripción detallada en la página web donde se explicaran todos los pasos necesarios para probar el código en vuestro ordenador, desde los pre-requisitos, las instalaciones y la ejecución de los programas. En esta sección se explica la manera de hacerlo en un sistema linux, asi como los proramas/librerias necesarias para su instalación y prueba.
+
+## Batch
+Esta sección se centra en el análisis del dataset al completo y se compone del siguientes programas/scripts :
+- Retrasos en mismas rutas ~ delay_per_journey.py
+- Retrasos en el aire ~ delay_per_journey.py
+- Cancelaciones por dia ~ cancelledPerDay
+- Cancelaciones por aerolinea ~ cancelledPerAirline
+- Cancelaciones por lugar ~ cancelledPerCity
+- Retrasos por dia ~ delayPerDay
+- Retrasos por aerolinea ~ delayPerAirline
+- Retrasos por lugar ~ delayPerCity
+- Porcentaje de tipo de Retraso ~ DelayTypePerMonth
+- Relacion distancia retraso ~ delayPerDistance
+- Meses que mas retrasos tienen ~ delayPerMonth
+- Peor y mejor día para volar ~ worstAndBestDayToFlight
+- Peor y mejor més para volar ~ worstAndBestMonthToFlight
+
+El nombre de los programas es el que se encuentra a la derecha en cada uno de los casos de uso seguido de una extensión **.py**
+
+### Pre-requisitos
+Para la ejecución de esta parte del código serán necesarios los siguientes elementos:
+
+1. Spark
+
+>Puede acceder a la guía de instalación de Spark en modo local de clase desde este enlace.  [link](https://drive.google.com/file/d/1YX3-fyVV9fPQsqp6emV7tDa4-KoNcxva/view)
+
+2. Dataset
+
+>Será necesario descargar en dataset 2009-2018 en formato csv disponible en este enlace.  [link](https://drive.google.com/file/d/1qd2dmv8isbE4zniFAYOMO0z2r4mokutk/view?usp=sharing)
+
+3. Código fuente 
+>Será necesario descargar el código fuente de la parte batch del proyecto se encuentra en la carpeta **spark-batch** del repositorio.  [link](https://github.com/ivanfermena/code-airline-delay-cancellation-big-data/)
+
+4. Dependencias
+
+>Instalar el manager de paquetes de python
+	
+	sudo apt-get install python-pip
+
+>Instalar el constructor de python thinker
+
+	sudo apt-get install python-tk
+
+>Instalar todos los paquetes necesarios
+	
+	pip install matplotlib
+	pip install scikit-learn
+	pip install pandas
+	pip install plotly_express
+
+    Aun asi es importante que en cada uno de los ejemplos se vaya a cada sección en la página web ya que además de una explicación mas detallada dedependencias y instalaciones necesarias.
+
+### Salidas de los scripts
+Si el usuario quiere obtener una salida en formato csv deberá des-comentar la última linea de todos los scripts, la ejecución del programa será mas lenta pero nos permitirá obtener los resultados de ejecución de una manera mas clara.
+
+### Ejecución del código
+Una vez hemos instalado Spark y hemos descagardo el dataset podremos proceder a la ejecución de los programas.  **Remarcamos** que los scripts y el dataset han de estar en el mismo directorio.
+
+Abrimos una shell del ordenador y accedemos al directorio donde se encuentra el código y el dataset
+
+	cd <directorio>/spark-batch
+Para ejecutar un script, por ejemplo el de cancelados al día ejecutamos el siguiente comando
+
+	spark-submit nombreDelFicher.py
+Ej:
+
+	spark-submit cancelledPerDay.py
+Si hemos des-comentado la linea que nos genera un fichero de salida ejecutamos la siguiente orden para visualizar el contenido
+
+	cat /<nombreDelFicheroEjecutadoSinExtension>/*.csv
+Ej:
+
+	cat /cancelledPerDay/*.csv
+
+Finalmente como entornos no es mas necesario que la linea de comandos de linux y si es requerido, un editor de texto para poder visualizar correctamente el código, pero no es necesaria la instalación de más entornos que los que nombramos con anterioridad.
 
 # **Evaluación del rendimiento (aceleración, rendimiento, escalado débil y fuerte) y discusión sobre los gastos generales y las optimizaciones realizadas**
 
+Lo primero que se nos plantea a la hora de desarrollar el trabajo son las necesidades que tiene nuestra aplicación. En este caso nos encontramos con una aplicación que realiza procesamiento de datos a gran escala, lo que significa que cuantos más datos existan mayor será el tiempo requerido para la ejecución del software. Por lo tanto nuestra principal necesidad se basa en los recursos que usaremos para procesar todos estos datos.
 
+Debido al proceso de desarrollo realizado durante el proyecto no se han tenido problemas de rendimiento muy elevados. Hemos usado ejemplos del dataset con suficientes datos significativos para hacer los casos pero sin que se perdiera mucho tiempo en cada procesamiento o consulta. El tamaño de este dataset de prueba ha sido diferente dependiendo del nivel de computo y cores que tenia cada ordenador personal de los miembros del equipo, pero finalmente si se unificaron estas conclusiones dando una solucion final con el ordenador mas potente y usando la cantidad de cores máxima para provechar el procesamiento paralelo que nos brinda este paradigma. 
+
+Esta necesidad nos hace pensar en el tipo de infraestructura que vamos a utilizar, y aquí no hay duda. Scale out es un término que hace referencia a la capacidad de crecimiento horizontal, es decir, no es la capacidad lo que importa sino el número de recursos con el que se cuenta. Si aplicamos esta propiedad a nuestro proyecto, lo que necesitamos es crecer en la cantidad de hardware y no en la potencia de este.
+
+Aquí es donde entra AWS, la plataforma que nos brinda la oportunidad de conseguir esa elasticidad. Con una infraestructura cloud podemos crear instancias de máquinas remotas que nos permiten aumentar el número de ordenadores que utilizamos para el procesado de datos, es decir, podemos utilizar 20 maquinas para distribuir el trabajo de procesado entre todas ellas.
+
+Realizaremos una ejecución de un script del proyecto en local y otra utilizando AWS. Hay que tener en cuenta que en los dos ejemplos utilizamos Spark como modelo de programación, lo que nos permite en cierta medida mejorar el rendimiento del programa incluso en una máquina individual.
+
+En la prueba se ejecutará uno de los casos del proyecto, en concreto el script "delaysTyperPerMonth". Al realizar la prueba en diferentes máquinas el mejor rendimiento obtenido es de una duración de **7 minutos y 15 segundos**. En otros casos llegaba a durar mas de 15 minutos la ejecución o incluso no acabar y saltar un probema de memoria.
+
+Para hacer la prueba en AWS levantamos un cluster con Spark, en este cluster utilizaremos Hadoop como sistema de ficheros compartido. EL cluster tiene 15 instancias m4xlarge con 4 cores cada una, es decir 56 cores disponibles como workers y 4 como master. La ejecución del script en el peor de los lanzamiento realizados es de un tiempo de **1 minuto y 30 segundos**.
+
+Como conclusión podemos dictar claramente que obtenemos una mejora sustancial en la ejecución aprovechandonos del cloud computing, ya que nos disminuye sustancial mente el tiempo de procesamiento gracias a su elasticidad traducida en escalado horizontal de manera simple y sencilla para el cliente.
 
 # **Discusión final sobre los objetivos alcanzados, las mejoras sugeridas, las lecciones aprendidas, el trabajo futuro, las ideas interesantes ...**
 
@@ -108,6 +203,9 @@ A la hora de plantear mejoras sobre nuestro proyecto sería interesante conocer,
 
 Por otra parte pensamos que se podría dar más valor al análisis en tiempo real ya que sería interesante ingresar alertas cuando se superan determinados umbrales para un mayor control de la situación o realizar análisis de otras variables como la cancelación en tiempo real. Además consideramos que el análisis de modelos de machine learning con regresión lineal se queda muy limitado y nos hubiera gustado aplicar modelos más complejos como Deep Learning o KMeans, que podrían expresar resultados más precisos. Si se consiguiera esto, se podría hacer previsiones del tiempo de retraso que va a tener un vuelo a partir de unos parámetros, algo importante para poder anticiparse en la toma de decisiones y poder evitarlo.
 
-Aún con todo lo que se puede ampliar el proyecto, estamos más que satisfechos con los conocimientos adquiridos, ya que ha constituido una buena aproximación a las tecnologias que han permitido asentar las bases teóricas recibidas durante el curso.
+En el caso determinado del procesamiento en streaming no nos hemos visto limitados por aquellos problemas reales del analisis en tiempo real, como podría ser la latencia. Sería algo interesante de estudiar en un determinado momento futuro llevando una extensión de la parte de streaming a cloud y estudiar como afecta esa latencia al rendimiento del modelo.
+
+Aún con todo lo que se puede ampliar el proyecto, estamos más que satisfechos con los conocimientos adquiridos, ya que se ha constituido una buena aproximación a las tecnologías que han permitido asentar las bases teóricas recibidas durante el curso. Nos permite poder tomar decisiones de cuando es determinado el uso del Big Data y cloud, justificando correctamente su uso, asi como sus ventajas y desventajas.
 
 # **Citaciones**
+
