@@ -7,7 +7,7 @@ categories: batch
 
 
 ## Descripción
-En este test se compruebarán que cantidad de retrasos se producen cada día, esto nos permite analizar que tipo de razones pueden provocar dichos retrasos.
+En este test se comprobará que cantidad de retrasos se producen cada día, esto nos permite analizar que tipo de razones pueden provocar dichos retrasos.
 
 ## Ficheros
 Son necearios los siguientes ficheros :
