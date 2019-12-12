@@ -9,7 +9,7 @@ En este proyecto hemos estado trabajando cuatro estudiantes de Ingeniería del S
 
 - Íñigo - [Github](https://github.com/igarciaconde) - [Linkedin](https://www.linkedin.com/in/i%C3%B1igo-garcia-conde-trueba-777076a5/)
 
-- Jaime - [Github]() - [Linkedin]()
+- Jaime - [Github](https://github.com/jaimepal) - [Linkedin](https://www.linkedin.com/in/jaime-palazón-778260b1/)
 
 - Gerardo - [Github]() - [Linkedin]()
 
