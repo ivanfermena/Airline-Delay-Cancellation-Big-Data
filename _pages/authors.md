@@ -5,7 +5,15 @@ permalink: /authors/
 show-in-menu: yes
 ---
 
+En este proyecto hemos estado trabajando cuatro estudiantes de Ingeniería del Software de la Facultad Informática de la universidad Complutense de Madrid. A continuación se expondrán los nombres e información de cada uno de los miembros: 
 
+- Íñigo - [Github]() - [Linkedin]()
+
+- Jaime - [Github]() - [Linkedin]()
+
+- Gerardo - [Github]() - [Linkedin]()
+
+- Iván - [Github](https://github.com/ivanfermena) - [Linkedin](https://es.linkedin.com/in/ivanfermena)
 
 
 
