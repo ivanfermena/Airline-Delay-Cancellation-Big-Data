@@ -18,6 +18,10 @@ El proyecto tiene que ser capaz de justificar los siguientes apartados:
 * Do not remove this line (it will not be displayed) 
 {:toc}
 
+# **Definición del proyecto**
+
+Proyecto de la asignatura llama “Cloud y Big Data” de la Facultad de Informática de la Universidad Complutense de Madrid en la que se pretende representar todos los conocimientos obtenidos a los largo de la asignatura. Se nos dan las bases para conocer y desarrollar en entornos cloud y big data, entendiendo cual es su pontencial y en que ocasiones hay que usar dichas tecnologias. En particular en este proyecto se ha obtenido un dataset de vuelos nacionales de EEUU en la que aparece diferente información relativa a los retrasos y cancelaciones de estos vuelos. Se ha realizado un analisis estadistico de los datos con la finalidad de obtener patrones y comportamientos sobre estos retrasos y cancelaciones. La intención es que posteriormente se de una base solidad de analisis más profundo para la obtencion de valor o toma de decisiones sobre el caso de uso.
+
 # **Descripción de la necesidad de Big Data**
 
 Nos encontramos ante un problema muy orientado a un procesamiento paralelo a gran escala. El caso de uso de la aviación siempre ha sido un foco principal del procesamiento a gran escala, tanto por la gran cantidad de datos que trata, como por las diferentes fuentes de datos que necesita analizar. Nuestro caso de uso sólo se centra en vuelos nacionales dentro de EEUU, pero ya sólo con esto, tratamos cerca de entre 100.000 y 700.000 transacciones aéreas por año que se producen en cada uno de los 30 aeropuertos activos a día de hoy. Para realizar análisis estadísticos, transformaciones o agrupaciones de los diferentes datos es necesaria una potencia de cómputo muy elevada y por ello nos aprovechamos de la ventaja que da el procesamiento en paralelo a gran escala.
