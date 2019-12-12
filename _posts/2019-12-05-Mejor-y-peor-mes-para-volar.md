@@ -1,16 +1,16 @@
 ---
 layout: post
 title:  "El mejor y el peor mes para volar"
-description: Pensado en viajar dentro EEUU, el mejor y peor més para coger un avión
+description: Pensando en viajar dentro EEUU, el mejor y peor mes para coger un avión
 categories: batch
 ---
 
 
 ## Descripción
-En este test se vamos a mostrar como influye la ruta en los retrasos de los vuelos en los 9 años de vuelos internos en EEUU.
+En este test vamos a mostrar como influye la ruta en los retrasos de los vuelos en los 9 años de vuelos internos en EEUU.
 
 ## Ficheros
-Son necearios los siguientes ficheros :
+Son necesarios los siguientes ficheros :
 
 
 * `worstAndBestMonthToFlight.py`
