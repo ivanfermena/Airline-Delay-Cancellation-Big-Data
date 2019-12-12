@@ -1,17 +1,17 @@
 ---
 layout: post
 title:  "Retrasos en los distintos meses"
-description: Que mes es el que acumula más retrasos
+description: Qué mes es el que acumula más retrasos
 categories: batch
 ---
 
 
 
 ## Descripción
-En este test se vamos a buscar cual es el mes del año que que tiene más retrasos en los 9 años de vuelos internos en EEUU.
+En este test vamos a buscar cuál es el mes del año que tiene más retrasos en los 9 años de vuelos internos en EEUU.
 
 ## Ficheros
-Son necearios los siguientes ficheros :
+Son necesarios los siguientes ficheros :
 
 
 * `delayPerMonth.py`
