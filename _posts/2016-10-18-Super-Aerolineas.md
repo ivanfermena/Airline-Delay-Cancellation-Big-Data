@@ -1,16 +1,16 @@
 ---
 layout: post
 title:  "Aerolineas que superan sus retrasos"
-description: Cuantos vuelos salen con retraso y llegan en hora
+description: Cuántos vuelos salen con retraso y llegan en hora
 categories: batch
 ---
 
 
 ## Descripción
 
-A lo largo de un día se producen miles de retrasos, hemos estudiado que pueden ser producidos por multiples causas como la meteorología, la fecha del año o incluso por la gestión de la aerolinea.
+A lo largo de un día se producen miles de retrasos. Hemos estudiado qué pueden ser producidos por múltiples causas como la meteorología, la fecha del año o incluso por la gestión de la aerolinea.
 
-En este apardado mostramos durante los nueve años de estudio cuantos vuelos que partian con unretraso inicial, finalmente han conseguido reducirlo y llegar a la hora preestablecida o incluso antes.  
+En este apartado mostramos durante los nueve años de estudio cuántos vuelos que partían con un retraso inicial, finalmente han conseguido reducirlo y llegar a la hora preestablecida o incluso antes.  
 
 ## Ficheros
 
@@ -31,7 +31,7 @@ Para visualizar el contenido de la salida ejecutar el siguiente comando en la sh
 
 ## Resultado
 
-Partiendo del dataframe que contiene todo el dataset inicial se ejecuta una consulta que a grupa todos los vuelos por aerolinea, que salieron con retraso de sus destinos pero llegaron antes de la hora de llegada establecida. La salida es la siguiente: 
+Partiendo del dataframe que contiene todo el dataset inicial se ejecuta una consulta que agrupa todos los vuelos por aerolinea, que salieron con retraso de sus destinos pero llegaron antes de la hora de llegada establecida. La salida es la siguiente: 
 
     +--------+-------+
     |Airlines|  veces|
