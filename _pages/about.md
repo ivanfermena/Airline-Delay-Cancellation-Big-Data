@@ -7,9 +7,9 @@ show-in-menu: yes
 
 ## Descripción de proyecto
 
-Proyecto de la asignatura llama "Cloud y Big Data" de la Facultad de Informática de la Universidad Complutense de Madrid en la que se pretende representar todos los conocimientos obtenidos a los largo de la asignatura. Se nos dan las bases para conocer y desarrollar en entornos cloud y big data, entendiendo cual es su pontencial y en que ocasiones hay que usar dichas tecnologias.
-git satu
-En particular en este proyecto se ha obtenido un dataset de vuelos nacionales de EEUU en la que aparece diferente información relativa a los retrasos y cancelaciones de estos vuelos. Se ha realizado un analisis estadistico de los datos con la finalidad de obtener patrones y comportamientos sobre estos retrasos y cancelaciones. La intención es que posteriormente se de una base solidad de analisis mas profundo para la obtencion de valor o toma de decisiones sobre el caso de uso.
+Proyecto de la asignatura "Cloud y Big Data" de la Facultad de Informática de la Universidad Complutense de Madrid en el que se pretende representar todos los conocimientos obtenidos a lo largo de la asignatura. Se nos dan las bases para conocer y desarrollar en entornos cloud y big data, entendiendo cuál es su potencial y en que ocasiones hay que usar dichas tecnologias.
+
+En particular en este proyecto se ha obtenido un dataset de vuelos nacionales de EEUU en la que aparece diferente información relativa a los retrasos y cancelaciones de estos vuelos. Se ha realizado un análisis estadístico de los datos con la finalidad de obtener patrones y comportamientos sobre estos retrasos y cancelaciones. La intención es que posteriormente se de una base solidad de análisis más profundo para la obtención de valor o toma de decisiones sobre el caso de uso.
 
 ## ¿Por qué usar procesamiento paralelo a gran escala?
 
@@ -24,11 +24,11 @@ La mayoría de campos presenta una buena calidad, aunque no todos están exentos
 
 ## Infraestructuras y aplicaciones usados
 
-Para la realización de la práctica hemos usado como herramienta Apache Spark, tanto para la procesamiento en tiempo real como para batch, de este modo usamos una única herramienta unificada para ambos procesos. Debido a la cantidad de datos con la que disponemos, usaremos ejemplos mas pequeños de los datos para el procesamiento en batch y una seccion mas pequeña y preparada para el procesamiento en tiempo real, de este modo creamos todo el sistema necesario para la insercción de grandes cantidades de datos y reales.
+Para la realización de la práctica hemos usado como herramienta Apache Spark, tanto para la procesamiento en tiempo real como para Batch, de este modo usamos una única herramienta unificada para ambos procesos. Debido a la cantidad de datos con la que disponemos, usaremos ejemplos mas pequeños de los datos para el procesamiento en Batch y una sección más pequeña y preparada para el procesamiento en tiempo real, de este modo creamos todo el sistema necesario para la inserción de grandes cantidades de datos reales.
 
-Como infraestructura usaremos el procesamiento cloud de aws, ya que no contamos con infraestructura suficiente para hacer un cluster "On-Premises". Se tiene pensado el uso de las máquinas locales y código subido a github para realizar el desarrollo, debido a una mayor raidez de desarrollo en un ambiente en local y posteriormente desplegarlo en un cluster en aws. 
+Como infraestructura usaremos el procesamiento cloud de AWS, ya que no contamos con infraestructura suficiente para hacer un cluster "On-Premise". Se tiene pensado el uso de las máquinas locales y código subido a github para realizar el desarrollo, debido a una mayor rapidez de desarrollo en un ambiente en local y posteriormente desplegarlo en un clúster en AWS. 
 
-Usaremos como opción dada en aws el paquete de 4 vCPUs (m4.xlarge) de EMR, de este modo sabemos que tendremos el procesamiento necesario para la realización de estadísticas y gráficas que necesitamos. Así como el procesamiento en tiempo real.
+Usaremos como opción dada en AWS el paquete de 4 vCPUs (m4.xlarge) de EMR, de este modo sabemos que tendremos el procesamiento necesario para la realización de estadísticas y gráficas que necesitamos. Así como el procesamiento en tiempo real.
 
 
 
