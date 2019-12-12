@@ -7,7 +7,7 @@ show-in-menu: yes
 
 En este proyecto hemos estado trabajando cuatro estudiantes de Ingeniería del Software de la Facultad Informática de la universidad Complutense de Madrid. A continuación se expondrán los nombres e información de cada uno de los miembros: 
 
-- Íñigo - [Github]() - [Linkedin]()
+- Íñigo - [Github](https://github.com/igarciaconde) - [Linkedin](https://www.linkedin.com/in/i%C3%B1igo-garcia-conde-trueba-777076a5/)
 
 - Jaime - [Github]() - [Linkedin]()
 
