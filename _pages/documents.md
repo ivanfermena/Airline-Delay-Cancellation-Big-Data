@@ -60,6 +60,20 @@ A parte, realizamos también un modelo, en el que se pretende averiguar si la un
 
 ## Resultados y conclusiones
 
+
+Tras analizar los últimos 9 años de vuelos internos en Estados Unidos hemos podido observar que los retrasos y cancelaciones se producen en un 90% no por casusas climatológicas, sino por cuestiones de seguridad, gestion de la aerolinea y problemas con el sistema del aire de la nave.
+
+Hemos observado que el mejor día para volar en los últimos 9 años es el 7 de Julio, mientras que el peor es el 23 de Junio, respecto a los meses, el mejor es Octubre y el peor es Junio, así como los meses con más incidencias son Enero y Diciembre lo que puede estar ligado al clima, mientras que el mejor mes fue Noviembre.
+
+Estudiando la cantidad de retrasos que se producen al día, observamos que no hay mucha diferencia entre los días de un año, al final, durante los nueve años los retrasos se compensan y suelen rondar entre 500 y 300 para cualquier día del año;
+sin embargo las cancelaciones si que son más heterogeneas y pueden rondar entre 600  y 200 en el mismo día.
+
+Centrandonos en los aeropuertos nos sorprende que durante dichos años el que más retrasos ha tenido ha sido el de Albuquerque (ALQ) con más de 95.000 y le siguen dos de Alaska (ANC,AMA) con más de 55 mil y más de 22 mil respectivamente lo cual tendría sentido por la latituda a la que se encuentra el estado de Alaka. Albuquerque así mismo acumula el mayor numero de cancelaciones con 2.277 en el estado de Nuevo Mexico.
+
+Las aerolineas también juegan un papel importante en los retrasos y las cancelaciones, observamos que la que acumula más retrasos es SouthWest Airline (WN) con más de 4 millones de retrasos en los últimos 9 años, le sigue American Airlines (AA) con 2 millones y medio; pero si observamos las cancelaciones los números son mucho más igualados hay 5 aerolineas cerca de los 130 mil cancelaciones totales, que son: SothWest Airlines (WN), American Airlines(AA), SkyWest Airlines (OO), American Eagle Airlines (MQ), Express Jet (EV).
+
+Sin embargo se observa que muchos de los vuelos con retrasos inicailaes luego son capaces de llegar en hora o incluso adelantandose, lo cual indica que algunas aerolineas suplen sus retrasos acortando el tiempo de vuelo; la que más veces logro dicha corección del retraso fue la propia SouthWest Airlines (WN) con más de 1 millón de recuperaciones y le sigue Delta Airlines (DL) con más de 790 mil.
+
 En referencia a la sección de la realización del modelo de regresión lineal hemos averiguado que este modelo carece de complejidad para obtener previsiones concluyentes sobre los datos que se tenían, para esto, sería interesante aplicar otros métodos como DeepLearning o KMeans, mucho más sotisficados.
 
 # **Descripción detallada de su modelo y / o datos: de dónde vino, cómo lo adquirió, qué significa, etc.**
