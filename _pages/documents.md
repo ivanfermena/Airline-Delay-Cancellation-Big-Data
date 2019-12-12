@@ -10,8 +10,6 @@ COSAS QUE FALTAN:
 - [ ] Punto dos las conclusiones/resultados que hemos sacado y otras soluciones (no se si existen)
 - [ ] Seccion de citaciones.
 - [ ] Ampliar lo necesario, revisar y exportar a pdf
-- [ ] Pagina de autores
-- [ ] Cambiar footer
 
 El proyecto tiene que ser capaz de justificar los siguientes apartados:
 
