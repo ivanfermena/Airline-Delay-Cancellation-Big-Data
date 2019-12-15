@@ -81,3 +81,5 @@ Ej:
 ## Autores 
 
 -Iñigo García-Conde trueba  [GitHub](https://github.com/igarciaconde)
+-Iván Fernández Mena [GitHub](https://github.com/ivanfermena)
+-Gerardo Parra Rossignoli [GitHub](https://github.com/gprossignoli)
