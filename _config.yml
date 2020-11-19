@@ -31,7 +31,7 @@ analytics: UA-83979019-1
 simpleform-token: c0b7da36e152ab6be9c540a6b39dbae1
 
 # Redirect users after submitting the form
-redirect-to: https://github.com/ivanfermena/airline-delay-cancellation-big-data
+redirect-to: https://github.com/ivanfermena/Airline-Delay-Cancellation-Big-Data
 
 # Site version
 version: 0.9
